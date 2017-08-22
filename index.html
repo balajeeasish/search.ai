@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iNDx Beta</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script src="https://code.jquery.com/jquery-latest.min.js" async defer></script>
+  	<script src="/socket.io/socket.io.js" async defers></script>
+</head>
+<body>
+	<div id="topmenu">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>iNDx Beta
+					<img src="img/info.png" id="modal-btn">
+					<div id="infoModal" class="modal">
+						<div class="modal-content">
+    						<span class="close">&times;</span>
+							<p>Ask the bot questions!<br><br>
+							> Show active studies<br>
+							> Show patients with adverse effects<br>
+							> Show studies in phase 1<br></p>
+						</div>
+					</div>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="chatbox">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="chat well" id="chat"></div>
+				<form id="messageForm">
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Send" id="submit-button">
+						<div id="textarea">
+						   <textarea class="form-control" id="message" placeholder="Type your message here..." rows="2"></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			//create vars
+			var username = "username";
+			var socket = io('/' + username);
+			var $messageForm = $('#messageForm');
+			var $message = $('#message');
+			var $chat = $('#chat');
+
+			//messageForm sending out message
+			$messageForm.submit(function(e){
+				e.preventDefault();
+				if ($.trim($message.val()) == '') {
+					return;
+				} else {
+					socket.emit('send message', $message.val());
+					$message.val('');
+				}
+			});
+
+			//enter key sends out message
+			$messageForm.keyup(function(event){
+    			if(event.keyCode == 13){
+        			$("#submit-button").click();
+    			}
+			});
+
+			//printing user input onto page
+			socket.on('new message', function(data){
+				$chat.append('<div class="row"><div class="col-md-3"></div><div class="col-md-8 well" id="usermsg">'+ data.msg +'</div><div class="col-md-1 well" id="userhead"><strong>User</strong></div></div>');
+				//scroll to bottom
+				$chat.scrollTop($chat[0].scrollHeight);
+			});
+
+			//printing bot output onto page
+			socket.on('bot message', function(data){
+				$chat.append('<div class="row"><div class="col-md-2 well" id="bothead"><strong> 🤖 </strong></div><div class="col-md-8 well" id="botmsg">'+ data.msg +'</div></div>');
+				//scroll to bottom
+				$chat.scrollTop($chat[0].scrollHeight);
+			});
+
+			//modal
+			var modal = document.getElementById('infoModal');
+			var btn = document.getElementById("modal-btn");
+			var span = document.getElementsByClassName("close")[0];
+
+			btn.onclick = function() {
+			    modal.style.display = "block";
+			}
+
+			span.onclick = function() {
+			    modal.style.display = "none";
+			}
+
+			window.onclick = function(event) {
+			    if (event.target == modal) {
+			        modal.style.display = "none";
+			    }
+			}
+		});
+	</script>
+</body>
+</html>

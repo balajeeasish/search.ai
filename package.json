@@ -1,0 +1,18 @@
+{
+	"name": "search.ai",
+	"version": "1.0.0",
+	"private": "true",
+	"description": "Interprets user free-text search to create a structured query",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specific\" && exit 1"
+	},
+	"author": "Sai Atmakuri",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.15.3",
+		"json-query": "^2.2.2",
+		"node-wit": "^4.3.0",
+		"socket.io": "^2.0.3"
+	}
+}
