@@ -16,6 +16,25 @@ const wit = new Wit({accessToken: 'KHTO5ZH3NCVM7GVHNTTIQCTBKCAID5HF'});
 //set up json-query
 var jsonQuery = require('json-query');
 
+//connect HTML file to server
+app.get('/', function(require, resolve){
+  resolve.sendFile(__dirname + '/index.html')
+});
+
+//connect css 'static' files to server
+app.use(express.static(__dirname + '/public'));
+
+//create a namespace
+var username = "username";
+var nsp = io.of('/' + username);
+nsp.on('connection', function(socket){
+  //Send message
+  socket.on('send message', function(data){
+    nsp.emit('new message', {msg: data});
+    handleMessage(data);
+  });
+});
+
 //parse JSON files for data
 var fs = require('fs');
 function readContent(callback) {
@@ -98,7 +117,7 @@ function handleMessage(question) {
           readContent(function (err, data) {
             var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
             formatResponse(queryResult, function(message) {
-              send(message);
+              send(message)
             });
           });
           break;
@@ -111,22 +130,3 @@ function handleMessage(question) {
     }
   });
 }
-
-//connect HTML file to server
-app.get('/', function(require, resolve){
-  resolve.sendFile(__dirname + '/index.html')
-});
-
-//connect css 'static' files to server
-app.use(express.static(__dirname + '/public'));
-
-//create a namespace
-var username = "username";
-var nsp = io.of('/' + username);
-nsp.on('connection', function(socket){
-  //Send message
-  socket.on('send message', function(data){
-    nsp.emit('new message', {msg: data});
-    handleMessage(data);
-  });
-});

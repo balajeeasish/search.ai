@@ -8,7 +8,6 @@
 		"test": "echo \"Error: no test specific\" && exit 1"
 	},
 	"author": "Sai Atmakuri",
-	"license": "ISC",
 	"dependencies": {
 		"express": "^4.15.3",
 		"json-query": "^2.2.2",
