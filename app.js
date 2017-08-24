@@ -25,7 +25,7 @@ app.get('/', function(require, resolve){
 app.use(express.static(__dirname + '/public'));
 
 /* THE USERNAME VARIABLE NEEDS TO BE REPLACED WITH THE USERNAME OF THE LOGGED IN PERSON */
-//create a namespace
+//create a namespace for the chat
 var username = "username";
 var nsp = io.of('/' + username);
 nsp.on('connection', function(socket){
@@ -58,19 +58,22 @@ function send(message) {
 //create the query statement for the json-query module
 function createQuery(entities, keys) {
   var query = '';
+  //remove 'intent' entity
   keys.splice(keys.indexOf('intent'), keys.indexOf('intent')+1);
   if (keys.length == 0) {
     return query;
   } else {
     for (var i = 0; i < keys.length; i++) {
-      if (keys[i] == 'start') {
-        query += 'age' + '>=' + entities[keys[i]][0].value + ' & ';
-      } else if (keys[i] == 'end') {
-        query += 'age' + '<=' + entities[keys[i]][0].value + ' & ';
-      } else {
-        query += keys[i] + '=' + entities[keys[i]][0].value + ' & ';
-      }
+    	//if the roles of age (start and end) are detected the query should >= or <=
+    	if (keys[i] == 'start') {
+        	query += 'age' + '>=' + entities[keys[i]][0].value + ' & ';
+    	} else if (keys[i] == 'end') {
+			query += 'age' + '<=' + entities[keys[i]][0].value + ' & ';
+    	} else {
+        	query += keys[i] + '=' + entities[keys[i]][0].value + ' & ';
+    	}
     }
+    //return query statement without the last ' & '
     return query.substring(0, query.length-3);
   }
 }
@@ -81,7 +84,9 @@ function formatResponse(result, callback) {
   for (var i = 0; i < result.length; i++) {
     for (var j = 0; j < Object.keys(result[i]).length; j++) {
       var key = Object.keys(result[i])[j];
+      //Capitalize the first letter of the keys
       var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
+      //if a property is an array, print length of array instead of the array
       if (Array.isArray(Object.values(result[i])[j])) {
         var value = Object.values(result[i])[j].length;
       } else {
@@ -91,6 +96,7 @@ function formatResponse(result, callback) {
     }
     message += '<br>'
   }
+  //return formatted message without the last '<br>'
   callback(message.substring(0, message.length-4));
 }
 
@@ -112,6 +118,9 @@ function handleMessage(question) {
             formatResponse(queryResult, function(message) { 
 				send(message);
 			});
+			/*send('Check console');
+			var result = jsonQuery('[*Requestable=Yes][Originating ID]', {data: data}).value;
+			console.log(result);*/
           });
           break;
         case 'show_studies':
