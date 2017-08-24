@@ -4,12 +4,12 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
-//run the server
+//run the server at port 8080
 port = 8080;
 server.listen(port);
 console.log('Server running at: ' + port);
 
-//call Wit API with SERVER_ACCESS_TOKEN
+//call Wit API with the SERVER_ACCESS_TOKEN
 const Wit = require('node-wit').Wit;
 const wit = new Wit({accessToken: 'KHTO5ZH3NCVM7GVHNTTIQCTBKCAID5HF'});
 
@@ -24,6 +24,7 @@ app.get('/', function(require, resolve){
 //connect css 'static' files to server
 app.use(express.static(__dirname + '/public'));
 
+/* THE USERNAME VARIABLE NEEDS TO BE REPLACED WITH THE USERNAME OF THE LOGGED IN PERSON */
 //create a namespace
 var username = "username";
 var nsp = io.of('/' + username);
@@ -35,7 +36,7 @@ nsp.on('connection', function(socket){
   });
 });
 
-//parse JSON files for data
+//parse JSON files for data in an async function
 var fs = require('fs');
 function readContent(callback) {
   fs.readFile('db/study.json', 'utf8', function (err, data) {
@@ -45,7 +46,7 @@ function readContent(callback) {
   });
 }
 
-//send messages
+//send bot messages by emitting 'bot message'
 function send(message) {
   if (message == '') {
     nsp.emit('bot message', {msg: 'Sorry, no found result.'});
@@ -54,7 +55,7 @@ function send(message) {
   }
 }
 
-//create the query for json-query
+//create the query statement for the json-query module
 function createQuery(entities, keys) {
   var query = '';
   keys.splice(keys.indexOf('intent'), keys.indexOf('intent')+1);
@@ -74,7 +75,7 @@ function createQuery(entities, keys) {
   }
 }
 
-//formats the response of the query
+//formats the result of the query in a readable fashion
 function formatResponse(result, callback) {
   var message = '';
   for (var i = 0; i < result.length; i++) {
@@ -108,21 +109,18 @@ function handleMessage(question) {
         case 'show_patients':
           readContent(function (err, data) {
             var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
-            formatResponse(queryResult, function(message) {
-              send(message);
-            });
+            formatResponse(queryResult, function(message) { 
+				send(message);
+			});
           });
           break;
         case 'show_studies':
           readContent(function (err, data) {
             var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
-            formatResponse(queryResult, function(message) {
-              send(message)
-            });
+            formatResponse(queryResult, function(message) { 
+				send(message);
+			});
           });
-          break;
-        default:
-          send(`${intent.value}`);
           break;
       }
     } else {
