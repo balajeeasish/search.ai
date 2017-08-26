@@ -38,7 +38,7 @@
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Send" id="submit-button">
 						<div id="textarea">
-						   <textarea class="form-control" id="message" placeholder="Type your message here..." rows="2" autofocus="autofocus"></textarea>
+						   <textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
 						</div>
 					</div>
 				</form>
@@ -82,7 +82,7 @@
 
 			//printing bot output onto page
 			socket.on('bot message', function(data){
-				$chat.append('<div class="row"><div class="col-md-2 well" id="bothead"><strong> 🤖 </strong></div><div class="col-md-8 well" id="botmsg">'+ data.msg +'</div></div>');
+				$chat.append('<div class="row"><div class="col-md-2 well" id="bothead"><strong> 🤖 </strong></div><div class="col-md-10 well" id="botmsg">'+ data.msg +'</div></div>');
 				//scroll to bottom
 				$chat.scrollTop($chat[0].scrollHeight);
 			});

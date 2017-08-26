@@ -104,17 +104,17 @@ function formatResponseTable(result, callback) {
 	var message = '<table style="width:100%; border: 2px solid black;">';
 	var keys = Object.keys(result[0]);
 	
-	message += '<tr>';
+	message += '<tr style="border: 2px solid black; background-color: #6eb0d8;">';
 	for (var i = 0; i < keys.length; i++) {
 		var key = keys[i].toUpperCase();
 		var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
 
-		message += '<th style="text-align:center; padding-top: 5px; padding-bottom: 5px; border: .5px solid black;">' + key + '</th>';
+		message += '<th style="text-align:center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + key + '</th>';
 	}
 	message += '</tr>';
 	
 	for (var i = 0; i < result.length; i++) {
-		message += '<tr style="border: .5px solid black;">';
+		message += '<tr style="background-color: #73b8e2;">';
 		for (var j = 0; j < Object.keys(result[i]).length; j++) {
 			//if a property is an array, print length of array instead of the array
 			if (Array.isArray(Object.values(result[i])[j])) {
@@ -122,7 +122,7 @@ function formatResponseTable(result, callback) {
 			} else {
 				var value = Object.values(result[i])[j];
 			}
-			message += '<td style="text-align: center; padding-top: 5px; padding-bottom: 5px; border: .5px solid black;">' + value + '</td>';
+			message += '<td style="text-align: center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + value + '</td>';
 		}
 		message += '</tr>';
 	}
