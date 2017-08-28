@@ -43,6 +43,31 @@
 					"effects" : "none"
 				}
 			]
+        },
+		{
+            "id" : "CD42",
+			"phase" : "3",
+			"status" : "active",
+			"patients" : [
+				{
+					"id" : "ABF1",
+					"age" : "54",
+					"gender" : "male",
+					"effects" : "medium"
+				},
+				{
+					"id" : "ABF2",
+					"age" : "69",
+					"gender" : "female",
+					"effects" : "adverse"
+				},
+				{
+					"id" : "ABF3",
+					"age" : "78",
+					"gender" : "female",
+					"effects" : "none"
+				}
+			]
         }
     ]
 }

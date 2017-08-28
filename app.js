@@ -80,55 +80,66 @@ function createQuery(entities, keys) {
 
 //formats the result of the query in a readable fashion
 function formatResponse(result, callback) {
-	var message = '';
-	for (var i = 0; i < result.length; i++) {
-		for (var j = 0; j < Object.keys(result[i]).length; j++) {
-			var key = Object.keys(result[i])[j];
-			//Capitalize the first letter of the keys
-			var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
-			//if a property is an array, print length of array instead of the array
-			if (Array.isArray(Object.values(result[i])[j])) {
-				var value = Object.values(result[i])[j].length;
-			} else {
-				var value = Object.values(result[i])[j];
+	if (result.length > 0) {
+		var message = '';
+		for (var i = 0; i < result.length; i++) {
+			for (var j = 0; j < Object.keys(result[i]).length; j++) {
+				var key = Object.keys(result[i])[j];
+				//Capitalize the first letter of the keys
+				var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
+				//if a property is an array, print length of array instead of the array
+				if (Array.isArray(Object.values(result[i])[j])) {
+					var value = Object.values(result[i])[j].length;
+				} else {
+					var value = Object.values(result[i])[j];
+				}
+				message += formattedKey + ': ' + value + '<br>';
 			}
-			message += formattedKey + ': ' + value + '<br>';
+			message += '<br>'
 		}
-		message += '<br>'
+		//return formatted message without the last '<br>'
+		callback(message.substring(0, message.length-4));
+	} else {
+		callback('');
 	}
-	//return formatted message without the last '<br>'
-	callback(message.substring(0, message.length-4));
 }
 
+//formats the result of the query in a table fashion
 function formatResponseTable(result, callback) {
-	var message = '<table style="width:100%; border: 2px solid black;">';
-	var keys = Object.keys(result[0]);
-	
-	message += '<tr style="border: 2px solid black; background-color: #6eb0d8;">';
-	for (var i = 0; i < keys.length; i++) {
-		var key = keys[i].toUpperCase();
-		var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
+	if (result.length > 0) {
+		var message = '<table style="width:100%; border: 2px solid black;">';
+		var keys = Object.keys(result[0]);
+		
+		//go through the keys array to get all the table headings
+		message += '<tr style="border: 2px solid black; background-color: #6eb0d8;">';
+		for (var i = 0; i < keys.length; i++) {
+			var key = keys[i].toUpperCase();
+			var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
 
-		message += '<th style="text-align:center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + key + '</th>';
-	}
-	message += '</tr>';
-	
-	for (var i = 0; i < result.length; i++) {
-		message += '<tr style="background-color: #73b8e2;">';
-		for (var j = 0; j < Object.keys(result[i]).length; j++) {
-			//if a property is an array, print length of array instead of the array
-			if (Array.isArray(Object.values(result[i])[j])) {
-				var value = Object.values(result[i])[j].length;
-			} else {
-				var value = Object.values(result[i])[j];
-			}
-			message += '<td style="text-align: center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + value + '</td>';
+			message += '<th style="text-align:center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + key + '</th>';
 		}
 		message += '</tr>';
+		
+		//each following row contains the info of each patient in the results
+		for (var i = 0; i < result.length; i++) {
+			message += '<tr style="background-color: #73b8e2;">';
+			for (var j = 0; j < Object.keys(result[i]).length; j++) {
+				//if a property is an array, print length of array instead of the array
+				if (Array.isArray(Object.values(result[i])[j])) {
+					var value = Object.values(result[i])[j].length;
+				} else {
+					var value = Object.values(result[i])[j];
+				}
+				message += '<td style="text-align: center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + value + '</td>';
+			}
+			message += '</tr>';
+		}
+		
+		message += '</table>';
+		callback(message);
+	} else {
+		callback('');
 	}
-	
-	message += '</table>';
-	callback(message);
 }
 
 //main function to handle user input
@@ -160,7 +171,7 @@ function handleMessage(question) {
         		case 'show_studies':
           		readContent(function (err, data) {
 		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
-            		formatResponse(queryResult, function(message) { 
+            		formatResponseTable(queryResult, function(message) { 
 						send(message);
 					});
           		});
