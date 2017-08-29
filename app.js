@@ -71,7 +71,7 @@ nsp2.on('connection', function(socket){
 //parse JSON files for data in an async function
 var fs = require('fs');
 function readContent(callback) {
- 	fs.readFile('db/study.json', 'utf8', function (err, data) {
+ 	fs.readFile('db/data.json', 'utf8', function (err, data) {
     	if (err) throw err;
     	var obj = JSON.parse(data);
     	callback(null, obj);
@@ -148,8 +148,9 @@ function formatResponse(result, callback) {
 function formatResponseTable(result, callback) {
 	if (result.length > 0) {
 		var message = '<table id="table_msg">';
-		var keys = Object.keys(result[0]);
-		
+		var keys = ['Study', 'Group', 'Sample Status', 'Originating ID', 'BioInventory Registration', 'Visit', 'QC Reported Gender', 'USUBJID',	'Source Matcode', 'Container Matcode', 'Volume', 'Concentration'];
+		//var keys = Object.keys(result[0]);
+
 		//go through the keys array to get all the table headings
 		message += '<tr><thead>';
 		for (var i = 0; i < keys.length; i++) {
@@ -163,13 +164,9 @@ function formatResponseTable(result, callback) {
 		//each following row contains the info of each patient in the results
 		for (var i = 0; i < result.length; i++) {
 			message += '<tr>';
-			for (var j = 0; j < Object.keys(result[i]).length; j++) {
+			for (var j = 0; j < keys.length; j++) {
 				//if a property is an array, print length of array instead of the array
-				if (Array.isArray(Object.values(result[i])[j])) {
-					var value = Object.values(result[i])[j].length;
-				} else {
-					var value = Object.values(result[i])[j];
-				}
+				var value = result[i][keys[j]];
 				message += '<td>' + value + '</td>';
 			}
 			message += '</tr>';
@@ -230,7 +227,7 @@ function handleResultsTableMessage(question) {
       		switch (entities['intent'][0].value) {
 		        case 'show_patients':
           		readContent(function (err, data) {
-		            var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
+		            var queryResult = jsonQuery('[*' + createQuery(entities, keys) + ']', { data: data }).value;
 					formatResponseTable(queryResult, function(message) {
 						tableSend(message);
 					});
@@ -241,7 +238,7 @@ function handleResultsTableMessage(question) {
           		break;
         		case 'show_studies':
           		readContent(function (err, data) {
-		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
+		            var queryResult = jsonQuery('[*' + createQuery(entities, keys) + ']', { data: data }).value;
             		formatResponseTable(queryResult, function(message) { 
 						tableSend(message);
 					});

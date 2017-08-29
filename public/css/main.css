@@ -144,13 +144,13 @@ body {
 #table_msg th {
 	background-color: #0485d6;
 	text-align:center; 
-	padding: 5px 0px 5px 0px;
+	padding: 4px;
 	border: 1px solid black;
 	border-bottom: 2px solid black;
 }
 #table_msg td {
 	text-align: center; 
-	padding: 5px 0px 5px 0px; 
+	padding: 2px;
 	border: 1px solid black;
 }
 #table_msg tr:nth-child(odd) {
