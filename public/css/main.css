@@ -69,6 +69,14 @@ body {
 	height: 450px;
 	margin-top: 20px;
 }
+#results_table{
+	background-color: #fff;
+	overflow:auto;
+	margin-top: 20px;
+	padding:19px;
+	margin-bottom:20px;
+	height: auto;
+}
 #textarea {
 	overflow: hidden;
 	margin-top: 20px;
@@ -128,4 +136,26 @@ body {
   	padding-right: 0px;
   	margin-right: 15px;
   	margin-left: 15px;
+}
+#table_msg table {
+	width:100%; 
+	border: 2px solid black;
+}
+#table_msg th {
+	background-color: #0485d6;
+	text-align:center; 
+	padding: 5px 0px 5px 0px;
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+}
+#table_msg td {
+	text-align: center; 
+	padding: 5px 0px 5px 0px; 
+	border: 1px solid black;
+}
+#table_msg tr:nth-child(odd) {
+	background-color: #cfe0fc;
+}
+#table_msg tr:nth-child(even) {
+	background-color: #99baef;
 }

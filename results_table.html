@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search.ai</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<script src="https://code.jquery.com/jquery-latest.min.js" async defer></script>
+  	<script src="/socket.io/socket.io.js" async defers></script>
+</head>
+<body>
+	<div id="topmenu" style="background-color: #0485d6;">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>iNDx Results Table search.ai</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="chatbox">
+		<div class="row">
+			<div class="col-md-12">
+				<form id="messageForm">
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Search" id="submit-button" style="background-color: #0485d6;">
+						<div id="textarea">
+						   <textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
+						</div>
+					</div>
+				</form>
+				<div id="results_table"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			//create vars
+			var username = "username";
+			var socket = io('/' + username);
+			var $messageForm = $('#messageForm');
+			var $message = $('#message');
+			var $results_table = $('#results_table');
+
+			//messageForm sending out message
+			$messageForm.submit(function(e){
+				e.preventDefault();
+				if ($.trim($message.val()) == '') {
+					return;
+				} else {
+					socket.emit('send message', $message.val());
+					$message.val('');
+				}
+			});
+
+			//enter key sends out message
+			$messageForm.keyup(function(event){
+    			if(event.keyCode == 13){
+        			$("#submit-button").click();
+    			}
+			});
+
+			//printing bot output onto page
+			socket.on('bot message', function(data){
+				$results_table.empty();
+				$results_table.append('<div class="col-md-12" id="table_msg">'+ data.msg +'</div>');
+			});
+		});
+	</script>
+</body>
+</html>

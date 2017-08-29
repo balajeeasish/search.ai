@@ -1,13 +1,43 @@
+//App 1 - Chat App
 //set up express and socket
 var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io').listen(server);
+var chat_app = express();
+var chat_server = require('http').createServer(chat_app);
+var chat_io = require('socket.io').listen(chat_server);
 
 //run the server at port 8080
-port = 8080;
-server.listen(port);
-console.log('Server running at: ' + port);
+chat_port = 8080;
+chat_server.listen(chat_port, function() {
+	console.log('Chat server running at port: ' + chat_port);
+});
+
+//connect HTML file to server
+chat_app.get('/', function(require, resolve){
+ 	resolve.sendFile(__dirname + '/index.html')
+});
+
+//connect css 'static' files to server
+chat_app.use(express.static(__dirname + '/public'));
+
+//App 2 - Results Table App
+//set up express and socket
+var results_table_app = express();
+var results_table_server = require('http').createServer(results_table_app);
+var results_table_io = require('socket.io').listen(results_table_server);
+
+//run the server at port 8081
+results_table_port = 8081;
+results_table_server.listen(results_table_port, function() {
+	console.log('Results Table server running at port: ' + results_table_port);
+});
+
+//connect HTML file to server
+results_table_app.get('/', function(require, resolve){
+ 	resolve.sendFile(__dirname + '/results_table.html')
+});
+
+//connect css 'static' files to server
+results_table_app.use(express.static(__dirname + '/public'));
 
 //call Wit API with the SERVER_ACCESS_TOKEN
 const Wit = require('node-wit').Wit;
@@ -16,23 +46,25 @@ const wit = new Wit({accessToken: 'KHTO5ZH3NCVM7GVHNTTIQCTBKCAID5HF'});
 //set up json-query
 var jsonQuery = require('json-query');
 
-//connect HTML file to server
-app.get('/', function(require, resolve){
- 	resolve.sendFile(__dirname + '/index.html')
-});
-
-//connect css 'static' files to server
-app.use(express.static(__dirname + '/public'));
-
 /* THE USERNAME VARIABLE NEEDS TO BE REPLACED WITH THE USERNAME OF THE LOGGED IN PERSON */
 //create a namespace for the chat
 var username = "username";
-var nsp = io.of('/' + username);
+var nsp = chat_io.of('/' + username);
 nsp.on('connection', function(socket){
  	//Send message
  	socket.on('send message', function(data){
 	    nsp.emit('new message', {msg: data});
 	    handleMessage(data);
+  	});
+});
+
+//app 2 namespace
+var nsp2 = results_table_io.of('/' + username);
+nsp2.on('connection', function(socket){
+ 	//Send message
+ 	socket.on('send message', function(data){
+	    nsp2.emit('new message', {msg: data});
+	    handleResultsTableMessage(data);
   	});
 });
 
@@ -52,6 +84,14 @@ function send(message) {
 	    nsp.emit('bot message', {msg: 'Sorry, no found result.'});
   	} else {
 	    nsp.emit('bot message', {msg: message});
+  	}
+}
+
+function tableSend(message) {
+	if (message == '') {
+	    nsp2.emit('bot message', {msg: 'Sorry, no found result.'});
+  	} else {
+	    nsp2.emit('bot message', {msg: message});
   	}
 }
 
@@ -107,22 +147,22 @@ function formatResponse(result, callback) {
 //formats the result of the query in a table fashion
 function formatResponseTable(result, callback) {
 	if (result.length > 0) {
-		var message = '<table style="width:100%; border: 2px solid black;">';
+		var message = '<table id="table_msg">';
 		var keys = Object.keys(result[0]);
 		
 		//go through the keys array to get all the table headings
-		message += '<tr style="border: 2px solid black; background-color: #6eb0d8;">';
+		message += '<tr><thead>';
 		for (var i = 0; i < keys.length; i++) {
 			var key = keys[i].toUpperCase();
 			var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
 
-			message += '<th style="text-align:center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + key + '</th>';
+			message += '<th>' + key + '</th>';
 		}
-		message += '</tr>';
+		message += '</tr></thead><tbody id="myTableBody">';
 		
 		//each following row contains the info of each patient in the results
 		for (var i = 0; i < result.length; i++) {
-			message += '<tr style="background-color: #73b8e2;">';
+			message += '<tr>';
 			for (var j = 0; j < Object.keys(result[i]).length; j++) {
 				//if a property is an array, print length of array instead of the array
 				if (Array.isArray(Object.values(result[i])[j])) {
@@ -130,12 +170,12 @@ function formatResponseTable(result, callback) {
 				} else {
 					var value = Object.values(result[i])[j];
 				}
-				message += '<td style="text-align: center; padding: 5px 0px 5px 0px; border: 1px solid black;">' + value + '</td>';
+				message += '<td>' + value + '</td>';
 			}
 			message += '</tr>';
 		}
 		
-		message += '</table>';
+		message += '</tbody></table>';
 		callback(message);
 	} else {
 		callback('');
@@ -157,11 +197,42 @@ function handleMessage(question) {
 		        case 'show_patients':
           		readContent(function (err, data) {
 		            var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
-//            		formatResponse(queryResult, function(message) { 
-//						send(message);
-//					});
-					formatResponseTable(queryResult, function(message) {
+            		formatResponse(queryResult, function(message) { 
 						send(message);
+					});
+          		});
+          		break;
+        		case 'show_studies':
+          		readContent(function (err, data) {
+		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
+            		formatResponse(queryResult, function(message) { 
+						send(message);
+					});
+          		});
+          		break;
+	      	}
+    	} else {
+	    	send('Sorry, I couldn\'t understand that.');
+    	}
+	});
+}
+
+function handleResultsTableMessage(question) {
+ 	return wit.message(question).then(({entities}) => {
+	    //check if intent exists
+	    if (Array.isArray(entities['intent'])) {
+      		//get the keys of the entities data
+      		var keys = [];
+      		for (var i = 0; i < Object.keys(entities).length; i++) {
+		        keys[i] = Object.keys(entities)[i];
+      		}
+
+      		switch (entities['intent'][0].value) {
+		        case 'show_patients':
+          		readContent(function (err, data) {
+		            var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
+					formatResponseTable(queryResult, function(message) {
+						tableSend(message);
 					});
 					/*send('Check console');
 					var result = jsonQuery('[*Requestable=Yes][Originating ID]', {data: data}).value;
@@ -172,13 +243,13 @@ function handleMessage(question) {
           		readContent(function (err, data) {
 		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
             		formatResponseTable(queryResult, function(message) { 
-						send(message);
+						tableSend(message);
 					});
           		});
           		break;
 	      	}
     	} else {
-	    	send('Sorry, I couldn\'t understand that.');
+	    	tableSend('Sorry, I couldn\'t understand that.');
     	}
 	});
 }
