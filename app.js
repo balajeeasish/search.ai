@@ -61,9 +61,15 @@ nsp.on('connection', function(socket){
 //app 2 namespace
 var nsp2 = results_table_io.of('/' + username);
 nsp2.on('connection', function(socket){
+	//default: show all patients
+	readContent(function (err, data) {
+		formatResponseTable(jsonQuery('[*]', { data: data }).value, function(message) {
+			nsp2.emit('bot message', {msg: message});
+		});
+	});
+	
  	//Send message
  	socket.on('send message', function(data){
-	    nsp2.emit('new message', {msg: data});
 	    handleResultsTableMessage(data);
   	});
 });
@@ -95,6 +101,14 @@ function tableSend(message) {
   	}
 }
 
+
+//Insert space in between words to prep entity names to query
+function insertSpaces(s, callback) {
+    s = s.replace(/([a-z])([A-Z])/g, '$1 $2');
+    s = s.replace(/([A-Z])([A-Z][a-z])/g, '$1 $2');
+    return s;
+}
+
 //create the query statement for the json-query module
 function createQuery(entities, keys) {
 	var query = '';
@@ -104,18 +118,19 @@ function createQuery(entities, keys) {
 	    return query;
   	} else {
 	    for (var i = 0; i < keys.length; i++) {
-    	//if the roles of age (start and end) are detected the query should >= or <=
-    	if (keys[i] == 'start') {
-        	query += 'age' + '>=' + entities[keys[i]][0].value + ' & ';
-    	} else if (keys[i] == 'end') {
-			query += 'age' + '<=' + entities[keys[i]][0].value + ' & ';
-    	} else {
-        	query += keys[i] + '=' + entities[keys[i]][0].value + ' & ';
+	    	//if the roles of age (start and end) are detected the query should >= or <=
+	    	if (keys[i] == 'start') {
+	        	query += 'age' + '>=' + entities[keys[i]][0].value + ' & ';
+	    	} else if (keys[i] == 'end') {
+				query += 'age' + '<=' + entities[keys[i]][0].value + ' & ';
+	    	} else {
+	    		//insertSpaces() gives spaces to the entity keys to properly query the JSON files
+	        	query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
+	    	}
     	}
     }
     //return query statement without the last ' & '
     return query.substring(0, query.length-3);
-  	}
 }
 
 //formats the result of the query in a readable fashion
@@ -148,7 +163,7 @@ function formatResponse(result, callback) {
 function formatResponseTable(result, callback) {
 	if (result.length > 0) {
 		var message = '<table id="table_msg">';
-		var keys = ['Study', 'Group', 'Sample Status', 'Originating ID', 'BioInventory Registration', 'Visit', 'QC Reported Gender', 'USUBJID',	'Source Matcode', 'Container Matcode', 'Volume', 'Concentration'];
+		var keys = ['Study', 'Group', 'Visit', 'Originating ID', 'BioInventory Registration', 'USUBJID', 'Sample Status', 'QC Reported Gender',	'Source Matcode', 'Container Matcode', 'Concentration', 'Volume'];
 		//var keys = Object.keys(result[0]);
 
 		//go through the keys array to get all the table headings
@@ -231,9 +246,6 @@ function handleResultsTableMessage(question) {
 					formatResponseTable(queryResult, function(message) {
 						tableSend(message);
 					});
-					/*send('Check console');
-					var result = jsonQuery('[*Requestable=Yes][Originating ID]', {data: data}).value;
-					console.log(result);*/
           		});
           		break;
         		case 'show_studies':
