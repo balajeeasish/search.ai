@@ -67,7 +67,7 @@ nsp2.on('connection', function(socket){
 			nsp2.emit('bot message', {msg: message});
 		});
 	});
-	
+
  	//Send message
  	socket.on('send message', function(data){
 	    handleResultsTableMessage(data);
@@ -137,16 +137,17 @@ function createQuery(entities, keys) {
 function formatResponse(result, callback) {
 	if (result.length > 0) {
 		var message = '';
+		var keys = ['Study', 'Visit', 'Originating ID', 'QC Reported Gender', 'Source Matcode', 'Container Matcode'];
 		for (var i = 0; i < result.length; i++) {
-			for (var j = 0; j < Object.keys(result[i]).length; j++) {
-				var key = Object.keys(result[i])[j];
+			for (var j = 0; j < keys.length; j++) {
+				var key = keys[j];
 				//Capitalize the first letter of the keys
 				var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
 				//if a property is an array, print length of array instead of the array
-				if (Array.isArray(Object.values(result[i])[j])) {
-					var value = Object.values(result[i])[j].length;
+				if (Array.isArray(result[i][keys[j]])) {
+					var value = result[i][keys[j]].length;
 				} else {
-					var value = Object.values(result[i])[j];
+					var value = result[i][keys[j]];
 				}
 				message += formattedKey + ': ' + value + '<br>';
 			}
@@ -208,7 +209,7 @@ function handleMessage(question) {
       		switch (entities['intent'][0].value) {
 		        case 'show_patients':
           		readContent(function (err, data) {
-		            var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
+		            var queryResult = jsonQuery('[*' + createQuery(entities, keys) + ']', { data: data }).value;
             		formatResponse(queryResult, function(message) { 
 						send(message);
 					});
@@ -216,7 +217,7 @@ function handleMessage(question) {
           		break;
         		case 'show_studies':
           		readContent(function (err, data) {
-		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
+		            var queryResult = jsonQuery('[*' + createQuery(entities, keys) + ']', { data: data }).value;
             		formatResponse(queryResult, function(message) { 
 						send(message);
 					});

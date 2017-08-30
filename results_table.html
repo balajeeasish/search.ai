@@ -63,7 +63,7 @@
 			//printing bot output onto page
 			socket.on('bot message', function(data){
 				$results_table.empty();
-				$results_table.append('<div class="col-md-12" id="table_msg">'+ data.msg +'</div>');
+				$results_table.append('<div class="col-md-12" id="table">'+ data.msg +'</div>');
 			});
 		});
 	</script>

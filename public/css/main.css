@@ -70,10 +70,8 @@ body {
 	margin-top: 20px;
 }
 #results_table{
-	background-color: #fff;
 	overflow:auto;
 	margin-top: 20px;
-	padding:19px;
 	margin-bottom:20px;
 	height: auto;
 }
@@ -137,20 +135,23 @@ body {
   	margin-right: 15px;
   	margin-left: 15px;
 }
-#table_msg table {
+#table {
+	padding: 0px;
+}
+#table_msg {
 	width:100%; 
 	border: 2px solid black;
 }
 #table_msg th {
 	background-color: #0485d6;
 	text-align:center; 
-	padding: 4px;
+	padding: 5px;
 	border: 1px solid black;
 	border-bottom: 2px solid black;
 }
 #table_msg td {
 	text-align: center; 
-	padding: 2px;
+	padding: 0px 2px 0px 2px;
 	border: 1px solid black;
 }
 #table_msg tr:nth-child(odd) {
