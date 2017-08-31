@@ -19,6 +19,12 @@
 	</div>
 	<div class="container" id="chatbox">
 		<div class="row">
+			<div class="col-md-12 btn-group" id="filter-box">
+				<div class="btn btn-primary" style="background-color: #0485d6;"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></div>
+				<div id="filter-criteria"></div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-12">
 				<form id="messageForm">
 					<div class="form-group">
@@ -41,6 +47,7 @@
 			var $messageForm = $('#messageForm');
 			var $message = $('#message');
 			var $results_table = $('#results_table');
+			var $filter = $('#filter-criteria');
 
 			//messageForm sending out message
 			$messageForm.submit(function(e){
@@ -50,6 +57,7 @@
 				} else {
 					socket.emit('send message', $message.val());
 					$message.val('');
+					$filter.empty();
 				}
 			});
 
@@ -64,6 +72,11 @@
 			socket.on('bot message', function(data){
 				$results_table.empty();
 				$results_table.append('<div class="col-md-12" id="table">'+ data.msg +'</div>');
+			});
+
+			//filter criteria
+			socket.on('filter-criteria', function(data){
+				$filter.append('<div class="btn btn-primary" id="filter-criteria-box">'+ data.msg +'</div>');
 			});
 		});
 	</script>

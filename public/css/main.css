@@ -63,6 +63,13 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+#filter-box {
+	margin-top: 20px;
+}
+#filter-criteria-box {
+	margin-left: 10px;
+	background-color: #0485d6;
+}
 #chat {
 	background-color: #f6f8fa;
 	overflow:auto;

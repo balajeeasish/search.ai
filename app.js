@@ -101,7 +101,6 @@ function tableSend(message) {
   	}
 }
 
-
 //Insert space in between words to prep entity names to query
 function insertSpaces(s, callback) {
     s = s.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -126,6 +125,10 @@ function createQuery(entities, keys) {
 	    	} else {
 	    		//insertSpaces() gives spaces to the entity keys to properly query the JSON files
 	        	query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
+	        	
+	        	//emit filters in query
+	        	var filterMsg = insertSpaces(keys[i]) + ' = ' + entities[keys[i]][0].value;
+	        	nsp2.emit('filter-criteria', {msg: filterMsg});
 	    	}
     	}
     }
@@ -171,8 +174,6 @@ function formatResponseTable(result, callback) {
 		message += '<tr><thead>';
 		for (var i = 0; i < keys.length; i++) {
 			var key = keys[i].toUpperCase();
-			var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
-
 			message += '<th>' + key + '</th>';
 		}
 		message += '</tr></thead><tbody id="myTableBody">';
@@ -181,7 +182,6 @@ function formatResponseTable(result, callback) {
 		for (var i = 0; i < result.length; i++) {
 			message += '<tr>';
 			for (var j = 0; j < keys.length; j++) {
-				//if a property is an array, print length of array instead of the array
 				var value = result[i][keys[j]];
 				message += '<td>' + value + '</td>';
 			}
