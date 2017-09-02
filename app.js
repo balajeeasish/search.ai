@@ -284,7 +284,6 @@ function handleResultsTableMessage(question) {
 		            var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
 					formatResponseTable(queryResult, function(message) {
 						tableSend(message);
-						console.log(message);
 					});
           		});
           		break;
