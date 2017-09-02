@@ -163,8 +163,12 @@ function formatResponse(result, callback) {
 					}
 					message += formattedKey + ': ' + value + '<br>';
 				}
-				var queryResult = jsonQuery('[*patients = ' + result[i]['id'] + '][TMB]', { data: data }).value;
-				message += 'TMB: ' + queryResult + '<br><br>';
+				if (keys.indexOf('gender') > -1) {
+					var queryResult = jsonQuery('[*patients = ' + result[i]['id'] + '][TMB]', { data: data }).value;
+					message += 'TMB: ' + queryResult + '<br><br>';
+				} else {
+					message += '<br>';
+				}
 			}
 			//return formatted message without the last '<br>'
 			callback(message.substring(0, message.length-4));
@@ -188,7 +192,9 @@ function formatResponseTable(result, callback) {
 				var key = keys[i].toUpperCase();
 				message += '<th>' + key + '</th>';
 			}
-			message += '<th>TMB</th>'
+			if (keys.indexOf('gender') > -1) {
+				message += '<th>TMB</th>';
+			}
 			message += '</tr></thead><tbody id="myTableBody">';
 			
 			//each following row contains the info of each patient in the results
@@ -202,9 +208,11 @@ function formatResponseTable(result, callback) {
 					}
 					message += '<td>' + value + '</td>';
 				}
-				var queryResult = jsonQuery('[*patients = ' + result[i]['id'] + '][TMB]', { data: data }).value;
-				message += '<td>' + queryResult + '</td>';
-				message += '</tr>';
+				if (keys.indexOf('gender') > -1) {
+					var queryResult = jsonQuery('[*patients = ' + result[i]['id'] + '][TMB]', { data: data }).value;
+					message += '<td>' + queryResult + '</td>';
+					message += '</tr>';
+				}
 			}
 			
 			message += '</tbody></table>';
