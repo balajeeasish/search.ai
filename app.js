@@ -1,3 +1,13 @@
+//Timer for each search
+var start = process.hrtime();
+
+var elapsed_time = function(note){
+    var precision = 3; // 3 decimal places
+    var elapsed = process.hrtime(start)[1] / 1000000; // divide by a million to get nano to milli
+    console.log(note + ' - ' + process.hrtime(start)[0] + " s, " + elapsed.toFixed(precision) + " ms"); // print message + time
+    start = process.hrtime(); // reset the timer
+}
+
 //App 1 - Chat App
 //set up express and socket
 var express = require('express');
@@ -273,6 +283,8 @@ function handleMessage(question) {
     	} else {
 	    	send('Sorry, I couldn\'t understand that.');
     	}
+
+    	elapsed_time('Chat: ' + question.trim());
 	});
 }
 
@@ -328,5 +340,7 @@ function handleResultsTableMessage(question) {
     	} else {
 	    	tableSend('Sorry, I couldn\'t understand that.');
     	}
+
+    	elapsed_time('Table: ' + question.trim());
 	});
 }
