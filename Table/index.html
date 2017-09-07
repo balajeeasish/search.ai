@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>search.ai</title>
+	<title>Table search.ai</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -10,17 +10,17 @@
   	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-	<div id="topmenu" style="background-color: #0485d6;">
+	<div id="topmenu">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>iNDx Results Table search.ai</h1>
+				<h1>search.ai</h1>
 			</div>
 		</div>
 	</div>
 	<div class="container" id="emit_box">
 		<div class="row">
 			<div class="col-md-12 btn-group" id="filter-box">
-				<div class="btn btn-primary" style="background-color: #0485d6;"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></div>
+				<div id="filter-icon" class="btn btn-primary"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></div>
 				<div id="filter-criteria"></div>
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 			<div class="col-md-12">
 				<form id="messageForm">
 					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Search" id="submit-button" style="background-color: #0485d6;">
+						<input type="submit" class="btn btn-primary" value="Search" id="submit-button">
 						<div id="textarea">
 						   <textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
 						</div>

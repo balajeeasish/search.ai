@@ -87,6 +87,18 @@ function insertSpaces(s, callback) {
     return s;
 }
 
+//print the filters
+function printFilters(filter, key) {
+  	//remove 'intent' entity
+  	key.splice(key.indexOf('intent'), key.indexOf('intent')+1);
+
+  	//go through filters and print them
+  	for (var i = 0; i < key.length; i++) {
+  		var filterMsg = insertSpaces(key[i]) + ': ' + filter[key[i]][0].value;
+		nsp.emit('filter-criteria', {msg: filterMsg});
+  	}
+}
+
 //create the query statement for the json-query module
 function createQuery(entities, keys) {
 	var query = '';
@@ -104,15 +116,37 @@ function createQuery(entities, keys) {
 	    	} else {
 	    		//insertSpaces() gives spaces to the entity keys to properly query the JSON files
 	        	query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
-	        	
-	        	//emit filters in query
-	        	var filterMsg = insertSpaces(keys[i]) + ' = ' + entities[keys[i]][0].value;
-	        	nsp.emit('filter-criteria', {msg: filterMsg});
 	    	}
     	}
     }
     //return query statement without the last ' & '
     return query.substring(0, query.length-3);
+}
+
+//create the query statement for TMB queries
+function createTMBQuery(queryResult, TMBQuery) {
+	//array to get results that match both arrays	
+	var results = [];
+	var count = 0;
+	for (var i = 0; i < queryResult.length; i++) {
+		for (var j = 0; j < TMBQuery.length; j++) {
+			if (queryResult[i] == TMBQuery[j]) {
+				results[count] = queryResult[i];
+				count++;
+			}
+		}
+	}
+
+	//put together the query statement
+	var query = '';
+	if (results.length > 0) {
+	    for (var i = 0; i < results.length; i++) {
+	        query += 'id=' + results[i] + ' | ';
+		}
+		return query.substring(0, query.length-3);
+	} else {
+		return 'null';
+	}
 }
 
 //formats the result of the query in a table fashion
@@ -188,27 +222,25 @@ function handleMessage(question) {
           		});
           		case 'show_patients_tmb':
 	          	if (Array.isArray(entities['TMB'])) {
-	          		readTMBContent(function (err, data) {
-			            var queryResult = jsonQuery('[*TMB '+ entities['TMB'][0].value + ']', { data: data }).value;
-						readContent(function(err, data2) {
-				            var msg = '<table id="table_msg"><tr><thead><th>ID</th><th>AGE</th><th>GENDER</th><th>EFFECTS</th><th>RESPONSE</th><th>TMB</th></tr></thead><tbody id="myTableBody">';
-				            for (var i = 0; i < queryResult.length; i++) {
-				            	var result = jsonQuery('study.patients[*id = '+ queryResult[i]['patients'] + ']', { data: data2 }).value;
-				            	formatResponse(result, function(message) { 
-									msg += message.substring(153, message.length-16);
-								});
-				            }
-				            formatResponse(result, function(message) {
-				            	send(msg + '</tbody></table>');
-				            	//emit filters in query
-	        					var filterMsg = insertSpaces('TMB ' + entities['TMB'][0].value);
-	        					nsp.emit('filter-criteria', {msg: filterMsg});
+					readContent(function (err, data) {
+					  	//remove 'TMB'
+					  	keys.splice(keys.indexOf('TMB'), keys.indexOf('TMB')+1);
+			            var queryResult = jsonQuery('study.patients[*'+ createQuery(entities, keys) + '][id]', { data: data }).value;
+						
+						readTMBContent(function(err, TMBData) {
+							var TMBQuery = jsonQuery('[*TMB '+ entities['TMB'][0].value + '][patients]', { data: TMBData }).value;
+
+							var finalQuery = jsonQuery('study.patients[*' + createTMBQuery(queryResult, TMBQuery) + ']', { data: data }).value; 
+				            formatResponse(finalQuery, function(message) {
+				            	send(message);
 				            });
 				        });
 	          		});
 	          	}
           		break;
 	      	}
+	      	//print the filters
+	      	printFilters(entities, keys);
     	} else {
 	    	send('Sorry, I couldn\'t understand that.');
     	}
