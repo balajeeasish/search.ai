@@ -125,7 +125,7 @@ function createQuery(entities, keys) {
 
 //create the query statement for TMB queries
 function createTMBQuery(queryResult, TMBQuery) {
-	//array to get results that match both arrays	
+	//array to get results that match both arrays
 	var results = [];
 	var count = 0;
 	for (var i = 0; i < queryResult.length; i++) {
@@ -167,7 +167,7 @@ function formatResponse(result, callback) {
 				message += '<th>TMB</th>';
 			}
 			message += '</tr></thead><tbody id="myTableBody">';
-			
+
 			//each following row contains the info of each patient in the results
 			for (var i = 0; i < result.length; i++) {
 				message += '<tr>';
@@ -185,7 +185,6 @@ function formatResponse(result, callback) {
 					message += '</tr>';
 				}
 			}
-			
 			message += '</tbody></table>';
 			callback(message);
 		});
@@ -216,7 +215,7 @@ function handleMessage(question) {
         		case 'show_studies':
           		readContent(function (err, data) {
 		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
-            		formatResponse(queryResult, function(message) { 
+            		formatResponse(queryResult, function(message) {
 						send(message);
 					});
           		});
@@ -226,11 +225,11 @@ function handleMessage(question) {
 					  	//remove 'TMB'
 					  	keys.splice(keys.indexOf('TMB'), keys.indexOf('TMB')+1);
 			            var queryResult = jsonQuery('study.patients[*'+ createQuery(entities, keys) + '][id]', { data: data }).value;
-						
+
 						readTMBContent(function(err, TMBData) {
 							var TMBQuery = jsonQuery('[*TMB '+ entities['TMB'][0].value + '][patients]', { data: TMBData }).value;
 
-							var finalQuery = jsonQuery('study.patients[*' + createTMBQuery(queryResult, TMBQuery) + ']', { data: data }).value; 
+							var finalQuery = jsonQuery('study.patients[*' + createTMBQuery(queryResult, TMBQuery) + ']', { data: data }).value;
 				            formatResponse(finalQuery, function(message) {
 				            	send(message);
 				            });
