@@ -107,7 +107,7 @@ function createQuery(entities, keys) {
 //formats the result of the query in a readable fashion
 function formatResponse(result, callback) {
 	if (result.length > 0) {
-		readTMBContent(function (err, data) {	
+		readTMBContent(function (err, data) {
 			var message = '';
 			//var keys = ['Study', 'Visit', 'Originating ID', 'QC Reported Gender', 'Source Matcode', 'Container Matcode'];
 			var keys = Object.keys(result[0]);
@@ -154,7 +154,7 @@ function handleMessage(question) {
 		        case 'show_patients':
           		readContent(function (err, data) {
 		            var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
-            		formatResponse(queryResult, function(message) { 
+            		formatResponse(queryResult, function(message) {
 						send(message);
 					});
           		});
@@ -162,7 +162,7 @@ function handleMessage(question) {
         		case 'show_studies':
           		readContent(function (err, data) {
 		            var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
-            		formatResponse(queryResult, function(message) { 
+            		formatResponse(queryResult, function(message) {
 						send(message);
 					});
           		});
@@ -174,7 +174,7 @@ function handleMessage(question) {
 				            var msg = '';
 				            for (var i = 0; i < queryResult.length; i++) {
 				            	var result = jsonQuery('study.patients[*id = '+ queryResult[i]['patients'] + ']', { data: data2 }).value;
-				            	formatResponse(result, function(message) { 
+				            	formatResponse(result, function(message) {
 									msg += message + '<br>';
 								});
 				            }
