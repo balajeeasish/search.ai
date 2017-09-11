@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  	<script src="/socket.io/socket.io.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
 	<div id="topmenu">
@@ -17,36 +17,36 @@
 					<img src="img/info.png" id="modal-btn">
 					<div id="infoModal" class="modal">
 						<div class="modal-content">
-    						<span class="close">&times;</span>
+							<span class="close">&times;</span>
 							<p>Ask the bot questions!<br><br>
-							> Show active studies<br>
-							> Show patients with adverse effects<br>
-							> Show studies in phase 1<br>
-							> Show patients between 64 years old and 67 years old<br>
-							> Show patients between 64 years old and 67 years old that are male<br></p>
+								> Show active studies<br>
+								> Show patients with adverse effects<br>
+								> Show studies in phase 1<br>
+								> Show patients between 64 years old and 67 years old<br>
+								> Show patients between 64 years old and 67 years old that are male<br></p>
+							</div>
 						</div>
-					</div>
-				</h1>
+					</h1>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container" id="chatbox">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="chat well" id="chat"></div>
-				<form id="messageForm">
-					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Send" id="submit-button">
-						<div id="textarea">
-						   <textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
+		<div class="container" id="chatbox">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="chat well" id="chat"></div>
+					<form id="messageForm">
+						<div class="form-group">
+							<input type="submit" class="btn btn-primary" value="Send" id="submit-button">
+							<div id="textarea">
+								<textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
+							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<script type="text/javascript">
+		<script type="text/javascript">
 		$(function(){
 			//create vars
 			var username = "username";
@@ -68,9 +68,9 @@
 
 			//enter key sends out message
 			$messageForm.keyup(function(event){
-    			if(event.keyCode == 13){
-        			$("#submit-button").click();
-    			}
+				if(event.keyCode == 13){
+					$("#submit-button").click();
+				}
 			});
 
 			//printing user input onto page
@@ -93,19 +93,19 @@
 			var span = document.getElementsByClassName("close")[0];
 
 			btn.onclick = function() {
-			    modal.style.display = "block";
+				modal.style.display = "block";
 			}
 
 			span.onclick = function() {
-			    modal.style.display = "none";
+				modal.style.display = "none";
 			}
 
 			window.onclick = function(event) {
-			    if (event.target == modal) {
-			        modal.style.display = "none";
-			    }
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
 			}
 		});
-	</script>
-</body>
-</html>
+		</script>
+	</body>
+	</html>

@@ -62,19 +62,19 @@ body {
 	padding: 0px;
 }
 #table_msg {
-	width:100%; 
+	width:100%;
 	border: 2px solid black;
 }
 #table_msg th {
 	background-color: #0485d6;
-	text-align:center; 
-	padding: 5px;
+	text-align:center;
+	padding: 10px;
 	border: 1px solid black;
 	border-bottom: 2px solid black;
 }
 #table_msg td {
-	text-align: center; 
-	padding: 0px 2px 0px 2px;
+	text-align: center;
+	padding: 5px;
 	border: 1px solid black;
 }
 #table_msg tr:nth-child(odd) {
