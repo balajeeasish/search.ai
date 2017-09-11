@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-  	<script src="/socket.io/socket.io.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
 	<div id="topmenu">
@@ -30,7 +30,7 @@
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Search" id="submit-button">
 						<div id="textarea">
-						   <textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
+							<textarea class="form-control" id="message" placeholder="Type a message" rows="2" maxlength="300" autofocus="autofocus"></textarea>
 						</div>
 					</div>
 				</form>
@@ -40,45 +40,45 @@
 	</div>
 
 	<script type="text/javascript">
-		$(function(){
-			//create vars
-			var username = "username";
-			var socket = io('/' + username);
-			var $messageForm = $('#messageForm');
-			var $message = $('#message');
-			var $results_table = $('#results_table');
-			var $filter = $('#filter-criteria');
+	$(function(){
+		//create vars
+		var username = "username";
+		var socket = io('/' + username);
+		var $messageForm = $('#messageForm');
+		var $message = $('#message');
+		var $results_table = $('#results_table');
+		var $filter = $('#filter-criteria');
 
-			//messageForm sending out message
-			$messageForm.submit(function(e){
-				e.preventDefault();
-				if ($.trim($message.val()) == '') {
-					return;
-				} else {
-					socket.emit('send message', $message.val());
-					$message.val('');
-					$filter.empty();
-				}
-			});
-
-			//enter key sends out message
-			$messageForm.keyup(function(event){
-    			if(event.keyCode == 13){
-        			$("#submit-button").click();
-    			}
-			});
-
-			//printing bot output onto page
-			socket.on('bot message', function(data){
-				$results_table.empty();
-				$results_table.append('<div class="col-md-12" id="table">'+ data.msg +'</div>');
-			});
-
-			//filter criteria
-			socket.on('filter-criteria', function(data){
-				$filter.append('<div class="btn btn-primary" id="filter-criteria-box">'+ data.msg +'</div>');
-			});
+		//messageForm sending out message
+		$messageForm.submit(function(e){
+			e.preventDefault();
+			if ($.trim($message.val()) == '') {
+				return;
+			} else {
+				socket.emit('send message', $message.val());
+				$message.val('');
+				$filter.empty();
+			}
 		});
+
+		//enter key sends out message
+		$messageForm.keyup(function(event){
+			if(event.keyCode == 13){
+				$("#submit-button").click();
+			}
+		});
+
+		//printing bot output onto page
+		socket.on('bot message', function(data){
+			$results_table.empty();
+			$results_table.append('<div class="col-md-12" id="table">'+ data.msg +'</div>');
+		});
+
+		//filter criteria
+		socket.on('filter-criteria', function(data){
+			$filter.append('<div class="btn btn-primary" id="filter-criteria-box">'+ data.msg +'</div>');
+		});
+	});
 	</script>
 </body>
 </html>
