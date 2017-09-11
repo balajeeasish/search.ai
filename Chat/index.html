@@ -78,7 +78,7 @@
 
 		//printing user input onto page
 		socket.on('new message', function(data){
-			$chat.append('<div class="row"><div class="col-md-3"></div><div class="col-md-8 well" id="usermsg">'+ data.msg +'</div><div class="col-md-1 well" id="userhead"><strong>User</strong></div></div>');
+			$chat.append('<div class="row"><div class="col-md-2 well" id="userhead"><strong>User</strong></div><div class="col-md-10 well" id="usermsg">'+ data.msg +'</div></div>');
 			//scroll to bottom
 			$chat.scrollTop($chat[0].scrollHeight);
 		});
