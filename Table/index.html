@@ -17,10 +17,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="container" id="emit_box">
+	<div class="container" id="table_view">
 		<div class="row">
-			<div class="col-md-12 btn-group" id="filter-box">
-				<div id="filter-icon" class="btn btn-primary"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></div>
+			<div class="col-md-12" id="filter-box">
+				<div id="filter-icon"><span class="glyphicon glyphicon-filter" aria-hidden="true" style="font-size: 20px;"></span></div>
 				<div id="filter-criteria"></div>
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 
 		//filter criteria
 		socket.on('filter-criteria', function(data){
-			$filter.append('<div class="btn btn-primary" id="filter-criteria-box">'+ data.msg +'</div>');
+			$filter.append('<div id="filter-criteria-box">'+ data.msg +'</div>');
 		});
 	});
 	</script>

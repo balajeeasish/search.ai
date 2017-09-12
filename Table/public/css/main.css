@@ -24,8 +24,17 @@ body {
 	margin-right: 50px;
 	cursor: pointer;
 }
+#table_view {
+	width: 95vw;
+}
 #filter-icon {
 	background-color: #0485d6;
+	color: #fff;
+	float: left;
+	width: auto;
+	height: 50px;
+	padding: 15px;
+	border-radius: 5px 0px 0px 5px;
 }
 #filter-box {
 	margin-top: 20px;
@@ -33,6 +42,12 @@ body {
 #filter-criteria-box {
 	margin-left: 10px;
 	background-color: #0485d6;
+	color: #fff;
+	float: left;
+	width: auto;
+	height: 50px;
+	padding: 15px;
+	border-radius: 5px;
 }
 #results_table{
 	overflow:auto;
