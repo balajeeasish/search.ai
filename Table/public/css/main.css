@@ -34,6 +34,7 @@ body {
 	width: auto;
 	height: 50px;
 	padding: 15px;
+	margin-bottom: 10px;
 	border-radius: 5px 0px 0px 5px;
 }
 #filter-box {
@@ -47,6 +48,7 @@ body {
 	width: auto;
 	height: 50px;
 	padding: 15px;
+	margin-bottom: 10px;
 	border-radius: 5px;
 }
 #results_table{
@@ -57,7 +59,7 @@ body {
 }
 #textarea {
 	overflow: hidden;
-	margin-top: 20px;
+	margin-top: 10px;
 	padding-right: .5em;
 }
 #textarea #message {
