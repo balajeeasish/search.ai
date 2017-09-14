@@ -41,8 +41,10 @@ var username = "username";
 var nsp = io.of('/' + username);
 nsp.on('connection', function(socket){
   //default: show all patients
+
+  var headers = ['id', 'age', 'gender', 'effects', 'response'];
   readContent(function (err, data) {
-    formatResponse(jsonQuery('study.patients[*]', { data: data }).value, function(message) {
+    formatResponse(jsonQuery('[*][id]', { data: data }).value, headers, [], function(message) {
       nsp.emit('bot message', {msg: message});
     });
   });
@@ -54,20 +56,33 @@ nsp.on('connection', function(socket){
   });
 });
 
+
 //parse JSON files for data in an async function
 var fs = require('fs');
+const testFolder = 'db/';
+const mainFile = 'study.json'
+
 function readContent(callback) {
-  fs.readFile('db/study.json', 'utf8', function (err, data) {
+  fs.readFile('db/' + mainFile, 'utf8', function (err, data) {
     if (err) throw err;
     var obj = JSON.parse(data);
     callback(null, obj);
   });
 }
-function readTMBContent(callback) {
-  fs.readFile('db/Patient_TMB.json', 'utf8', function (err, data) {
+function amReading(callback) {
+  fs.readdir(testFolder, function(err, filenames) {
     if (err) throw err;
-    var obj = JSON.parse(data);
-    callback(null, obj);
+    filenames.forEach(function(filename) {
+      fs.readFile(testFolder + filename, 'utf-8', function(err, data) {
+        if (err) throw err;
+        if (filename == mainFile || filename == '.DS_Store') {
+          return;
+        } else {
+          var obj = JSON.parse(data);
+          callback(null, obj);
+        }
+      });
+    });
   });
 }
 
@@ -80,6 +95,11 @@ function send(message) {
   }
 }
 
+//differentiate the elements of two arrays using a filter
+Array.prototype.diff = function(a) {
+  return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+
 //Insert space in between words to prep entity names to query
 function insertSpaces(s, callback) {
   s = s.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -89,9 +109,6 @@ function insertSpaces(s, callback) {
 
 //print the filters
 function printFilters(filter, key) {
-  //remove 'intent' entity
-  key.splice(key.indexOf('intent'), key.indexOf('intent')+1);
-
   //go through filters and print them
   for (var i = 0; i < key.length; i++) {
     var filterMsg = insertSpaces(key[i]) + ': ' + filter[key[i]][0].value;
@@ -99,23 +116,22 @@ function printFilters(filter, key) {
   }
 }
 
-//create the query statement for the json-query module
-function createQuery(entities, keys) {
+//create the initial query statements for the json-query module
+function createQuery(entities, keys, firstQuery) {
   var query = '';
-  //remove 'intent' entity
-  keys.splice(keys.indexOf('intent'), keys.indexOf('intent')+1);
   if (keys.length == 0) {
     return query;
   } else {
-    for (var i = 0; i < keys.length; i++) {
-      //if the roles of age (start and end) are detected the query should >= or <=
-      if (keys[i] == 'start') {
-        query += 'age' + '>=' + entities[keys[i]][0].value + ' & ';
-      } else if (keys[i] == 'end') {
-        query += 'age' + '<=' + entities[keys[i]][0].value + ' & ';
-      } else {
+    if (firstQuery) {
+      for (var i = 0; i < keys.length; i++) {
         //insertSpaces() gives spaces to the entity keys to properly query the JSON files
         query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
+      }
+    } else {
+      if (keys == 'TMB') {
+        query += insertSpaces(keys) + entities[keys][0].value + ' & ';
+      } else {
+        query += insertSpaces(keys) + '=' + entities[keys][0].value + ' & ';
       }
     }
   }
@@ -123,21 +139,8 @@ function createQuery(entities, keys) {
   return query.substring(0, query.length-3);
 }
 
-//create the query statement for TMB queries
-function createTMBQuery(queryResult, TMBQuery) {
-  //array to get results that match both arrays
-  var results = [];
-  var count = 0;
-  for (var i = 0; i < queryResult.length; i++) {
-    for (var j = 0; j < TMBQuery.length; j++) {
-      if (queryResult[i] == TMBQuery[j]) {
-        results[count] = queryResult[i];
-        count++;
-      }
-    }
-  }
-
-  //put together the query statement
+//create final query statement
+function createFinalQuery(results) {
   var query = '';
   if (results.length > 0) {
     for (var i = 0; i < results.length; i++) {
@@ -150,43 +153,61 @@ function createTMBQuery(queryResult, TMBQuery) {
 }
 
 //formats the result of the query in a table fashion
-function formatResponse(result, callback) {
+function formatResponse(result, mainHeaders, otherHeaders, callback) {
   if (result.length > 0) {
-    readTMBContent(function (err, data) {
-      var message = '<table id="table_msg">';
-      //var keys = ['Study', 'Group', 'Visit', 'Originating ID', 'BioInventory Registration', 'USUBJID', 'Sample Status', 'QC Reported Gender',	'Source Matcode', 'Container Matcode', 'Concentration', 'Volume'];
-      var keys = Object.keys(result[0]);
-
-      //go through the keys array to get all the table headings
-      message += '<tr><thead>';
-      for (var i = 0; i < keys.length; i++) {
-        var key = keys[i].toUpperCase();
-        message += '<th>' + key + '</th>';
-      }
-      if (keys.indexOf('gender') > -1) {
-        message += '<th>TMB</th>';
-      }
-      message += '</tr></thead><tbody id="myTableBody">';
-
-      //each following row contains the info of each patient in the results
-      for (var i = 0; i < result.length; i++) {
-        message += '<tr>';
-        for (var j = 0; j < keys.length; j++) {
-          if (Array.isArray(result[i][keys[j]])) {
-            var value = result[i][keys[j]].length;
-          } else {
-            var value = result[i][keys[j]];
-          }
-          message += '<td>' + value + '</td>';
+    readContent(function (err, data) {
+      amReading(function (err, content) {
+        var message = '<table id="table_msg">';
+        var keys = '';
+        if (otherHeaders.length > 0) {
+          keys = mainHeaders.concat(otherHeaders);
+        } else {
+          keys = mainHeaders;
         }
-        if (keys.indexOf('gender') > -1) {
-          var queryResult = jsonQuery('[*patients = ' + result[i]['id'] + '][TMB]', { data: data }).value;
-          message += '<td>' + queryResult + '</td>';
+
+        //go through the keys array to get all the table headings
+        message += '<tr><thead>';
+        for (var i = 0; i < keys.length; i++) {
+          var key = keys[i].toUpperCase();
+          message += '<th>' + key + '</th>';
+        }
+        message += '</tr></thead><tbody>';
+
+        //get values
+        var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
+
+        //each following row contains the info of each patient in the results
+        for (var i = 0; i < firstQuery.length; i++) {
+          message += '<tr>';
+          for (var j = 0; j < mainHeaders.length; j++) {
+            if (Array.isArray(firstQuery[i][mainHeaders[j]])) {
+              var value = firstQuery[i][mainHeaders[j]].length;
+            } else {
+              var value = firstQuery[i][mainHeaders[j]];
+            }
+            message += '<td>' + value + '</td>';
+          }
+
+          if (otherHeaders.length > 0) {
+
+            var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
+
+            for (var j = 0; j < otherHeaders.length; j++) {
+              if (Array.isArray(secondQuery[i][otherHeaders[j]])) {
+                var value = secondQuery[i][otherHeaders[j]].length;
+              } else {
+                var value = secondQuery[i][otherHeaders[j]];
+              }
+              message += '<td>' + value + '</td>';
+            }
+          }
+
           message += '</tr>';
         }
-      }
-      message += '</tbody></table>';
-      callback(message);
+
+        message += '</tbody></table>';
+        callback(message);
+      });
     });
   } else {
     callback('');
@@ -205,37 +226,47 @@ function handleMessage(question) {
 
       switch (entities['intent'][0].value) {
         case 'show_patients':
+        //remove 'intent' entity
+        keys.splice( keys.indexOf('intent'), 1 );
+
+        var mainHeaders = ['id', 'age', 'gender', 'effects', 'response'];
+        var otherHeaders = keys.diff(mainHeaders);
+        var existingHeaders = keys.diff(otherHeaders);
+
         readContent(function (err, data) {
-          var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
-          formatResponse(queryResult, function(message) {
-            send(message);
-          });
+          var firstQuery = jsonQuery('[*' + createQuery(entities, existingHeaders, true) + '][id]', { data: data }).value;
+
+          if (otherHeaders.length > 0) {
+            amReading(function (err, content) {
+              for (var i = 0; i < otherHeaders.length; i++) {
+                var secondQuery = jsonQuery('[*' + createQuery(entities, otherHeaders[i], false) + '][id]', { data: content }).value;
+                //remove results that differ from the firstQuery results
+                var someDiff = secondQuery.diff(firstQuery);
+                for (var i = 0; i < someDiff.length; i++) {
+                  secondQuery.splice( secondQuery.indexOf(someDiff[i]), 1 );
+                }
+              }
+              formatResponse(secondQuery, mainHeaders, otherHeaders, function (message) {
+                send(message);
+                elapsed_time('Table: ' + question.trim());
+              });
+            });
+          } else {
+            formatResponse(firstQuery, mainHeaders, otherHeaders, function (message) {
+              send(message);
+              elapsed_time('Table: ' + question.trim());
+            });
+          }
         });
         break;
         case 'show_studies':
         readContent(function (err, data) {
-          var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
+          //var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
+          var queryResult = '';
           formatResponse(queryResult, function(message) {
             send(message);
           });
         });
-        case 'show_patients_tmb':
-        if (Array.isArray(entities['TMB'])) {
-          readContent(function (err, data) {
-            //remove 'TMB'
-            keys.splice(keys.indexOf('TMB'), keys.indexOf('TMB')+1);
-            var queryResult = jsonQuery('study.patients[*'+ createQuery(entities, keys) + '][id]', { data: data }).value;
-
-            readTMBContent(function(err, TMBData) {
-              var TMBQuery = jsonQuery('[*TMB '+ entities['TMB'][0].value + '][patients]', { data: TMBData }).value;
-
-              var finalQuery = jsonQuery('study.patients[*' + createTMBQuery(queryResult, TMBQuery) + ']', { data: data }).value;
-              formatResponse(finalQuery, function(message) {
-                send(message);
-              });
-            });
-          });
-        }
         break;
       }
       //print the filters
@@ -243,7 +274,5 @@ function handleMessage(question) {
     } else {
       send('Sorry, I couldn\'t understand that.');
     }
-
-    elapsed_time('Table: ' + question.trim());
   });
 }

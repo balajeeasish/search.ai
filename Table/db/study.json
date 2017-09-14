@@ -1,81 +1,58 @@
-{
-    "study" : [
-        {
-            "id" : "CD40",
-			"phase" : "1",
-			"status" : "active",
-			"patients" : [
-				{
-					"id" : "ABC1",
-					"age" : "59",
-					"gender" : "male",
-					"effects" : "none",
-					"response": "Responder"
-				},
-				{
-					"id" : "ABC2",
-					"age" : "67",
-					"gender" : "female",
-					"effects" : "medium",
-					"response": "Responder"
-				},
-				{
-					"id" : "ABC3",
-					"age" : "71",
-					"gender" : "male",
-					"effects" : "adverse",
-					"response": "Non-Responder"
-				}
-			]
-        },
-		{
-            "id" : "CD41",
-			"phase" : "2",
-			"status" : "inactive",
-			"patients" : [
-				{
-					"id" : "ABE1",
-					"age" : "64",
-					"gender" : "male",
-					"effects" : "medium",
-					"response" :"Responder"
-				},
-				{
-					"id" : "ABE2",
-					"age" : "39",
-					"gender" : "female",
-					"effects" : "none",
-					"response": "Responder"
-				}
-			]
-        },
-		{
-            "id" : "CD42",
-			"phase" : "3",
-			"status" : "active",
-			"patients" : [
-				{
-					"id" : "ABF1",
-					"age" : "54",
-					"gender" : "male",
-					"effects" : "medium",
-					"response": "Non-Responder"
-				},
-				{
-					"id" : "ABF2",
-					"age" : "69",
-					"gender" : "female",
-					"effects" : "adverse",
-					"response": "Non-Responder"
-				},
-				{
-					"id" : "ABF3",
-					"age" : "78",
-					"gender" : "female",
-					"effects" : "none",
-					"response": "Responder"
-				}
-			]
-        }
-    ]
-}
+[
+  {
+    "id" : "ABC1",
+    "age" : "59",
+    "gender" : "male",
+    "effects" : "none",
+    "response": "Responder"
+  },
+  {
+    "id" : "ABC2",
+    "age" : "67",
+    "gender" : "female",
+    "effects" : "medium",
+    "response": "Responder"
+  },
+  {
+    "id" : "ABC3",
+    "age" : "71",
+    "gender" : "male",
+    "effects" : "adverse",
+    "response": "Non-Responder"
+  },
+  {
+    "id" : "ABE1",
+    "age" : "64",
+    "gender" : "male",
+    "effects" : "medium",
+    "response" :"Responder"
+  },
+  {
+    "id" : "ABE2",
+    "age" : "39",
+    "gender" : "female",
+    "effects" : "none",
+    "response": "Responder"
+  },
+  {
+    "id" : "ABF1",
+    "age" : "54",
+    "gender" : "male",
+    "effects" : "medium",
+    "response": "Non-Responder"
+  },
+  {
+    "id" : "ABF2",
+    "age" : "69",
+    "gender" : "female",
+    "effects" : "adverse",
+    "response": "Non-Responder"
+  },
+  {
+    "id" : "ABF3",
+    "age" : "78",
+    "gender" : "female",
+    "effects" : "none",
+    "response": "Responder"
+  }
+]
