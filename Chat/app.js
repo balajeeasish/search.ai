@@ -49,18 +49,30 @@ nsp.on('connection', function(socket){
 
 //parse JSON files for data in an async function
 var fs = require('fs');
+const testFolder = 'db/';
+const mainFile = 'study.json'
+
 function readContent(callback) {
-  fs.readFile('db/study.json', 'utf8', function (err, data) {
+  fs.readFile('db/' + mainFile, 'utf8', function (err, data) {
     if (err) throw err;
     var obj = JSON.parse(data);
     callback(null, obj);
   });
 }
-function readTMBContent(callback) {
-  fs.readFile('db/Patient_TMB.json', 'utf8', function (err, data) {
+function readFiles(callback) {
+  fs.readdir(testFolder, function(err, filenames) {
     if (err) throw err;
-    var obj = JSON.parse(data);
-    callback(null, obj);
+    filenames.forEach(function(filename) {
+      fs.readFile(testFolder + filename, 'utf-8', function(err, data) {
+        if (err) throw err;
+        if (filename == mainFile || filename == '.DS_Store') {
+          return;
+        } else {
+          var obj = JSON.parse(data);
+          callback(null, obj);
+        }
+      });
+    });
   });
 }
 
@@ -73,6 +85,11 @@ function send(message) {
   }
 }
 
+//differentiate the elements of two arrays using a filter
+Array.prototype.diff = function(a) {
+  return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+
 //Insert space in between words to prep entity names to query
 function insertSpaces(s, callback) {
   s = s.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -80,23 +97,22 @@ function insertSpaces(s, callback) {
   return s;
 }
 
-//create the query statement for the json-query module
-function createQuery(entities, keys) {
+//create the initial query statements for the json-query module
+function createQuery(entities, keys, firstQuery) {
   var query = '';
-  //remove 'intent' entity
-  keys.splice(keys.indexOf('intent'), keys.indexOf('intent')+1);
   if (keys.length == 0) {
     return query;
   } else {
-    for (var i = 0; i < keys.length; i++) {
-      //if the roles of age (start and end) are detected the query should >= or <=
-      if (keys[i] == 'start') {
-        query += 'age' + '>=' + entities[keys[i]][0].value + ' & ';
-      } else if (keys[i] == 'end') {
-        query += 'age' + '<=' + entities[keys[i]][0].value + ' & ';
-      } else {
+    if (firstQuery) {
+      for (var i = 0; i < keys.length; i++) {
         //insertSpaces() gives spaces to the entity keys to properly query the JSON files
         query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
+      }
+    } else {
+      if (keys == 'TMB' || keys == 'ASM') {
+        query += insertSpaces(keys) + entities[keys][0].value + ' & ';
+      } else {
+        query += insertSpaces(keys) + '=' + entities[keys][0].value + ' & ';
       }
     }
   }
@@ -104,35 +120,72 @@ function createQuery(entities, keys) {
   return query.substring(0, query.length-3);
 }
 
+//create final query statement
+function createFinalQuery(results) {
+  var query = '';
+  if (results.length > 0) {
+    for (var i = 0; i < results.length; i++) {
+      query += 'id=' + results[i] + ' | ';
+    }
+    return query.substring(0, query.length-3);
+  } else {
+    return 'null';
+  }
+}
+
 //formats the result of the query in a readable fashion
-function formatResponse(result, callback) {
+function formatResponse(result, mainHeaders, otherHeaders, callback) {
   if (result.length > 0) {
-    readTMBContent(function (err, data) {
-      var message = '';
-      //var keys = ['Study', 'Visit', 'Originating ID', 'QC Reported Gender', 'Source Matcode', 'Container Matcode'];
-      var keys = Object.keys(result[0]);
-      for (var i = 0; i < result.length; i++) {
-        for (var j = 0; j < keys.length; j++) {
-          var key = keys[j];
-          //Capitalize the first letter of the keys
-          var formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
-          //if a property is an array, print length of array instead of the array
-          if (Array.isArray(result[i][keys[j]])) {
-            var value = result[i][keys[j]].length;
-          } else {
-            var value = result[i][keys[j]];
-          }
-          message += formattedKey + ': ' + value + '<br>';
-        }
-        if (keys.indexOf('gender') > -1) {
-          var queryResult = jsonQuery('[*patients = ' + result[i]['id'] + '][TMB]', { data: data }).value;
-          message += 'TMB: ' + queryResult + '<br><br>';
+    //set a counter
+    var canCallback = true;
+
+    readContent(function (err, data) {
+      readFiles(function (err, content) {
+        var message = '';
+        var keys = '';
+        if (otherHeaders.length > 0) {
+          keys = mainHeaders.concat(otherHeaders);
         } else {
-          message += '<br>';
+          keys = mainHeaders;
         }
-      }
-      //return formatted message without the last '<br>'
-      callback(message.substring(0, message.length-4));
+        //get values
+        var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
+        if (otherHeaders.length > 0) {
+          var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
+          if (typeof secondQuery[0][otherHeaders[0]] == 'undefined') {
+            canCallback = false;
+          } else {
+            canCallback = true;
+          }
+        }
+        //each following row contains the info of each patient in the results
+        if (canCallback) {
+          for (var i = 0; i < firstQuery.length; i++) {
+            for (var j = 0; j < mainHeaders.length; j++) {
+              if (Array.isArray(firstQuery[i][mainHeaders[j]])) {
+                var value = firstQuery[i][mainHeaders[j]].length;
+              } else {
+                var value = firstQuery[i][mainHeaders[j]];
+              }
+              message += mainHeaders[j].toUpperCase() + ': ' + value + '<br>';
+            }
+            if (otherHeaders.length > 0) {
+              for (var j = 0; j < otherHeaders.length; j++) {
+                if (Array.isArray(secondQuery[i][otherHeaders[j]])) {
+                  var value = secondQuery[i][otherHeaders[j]].length;
+                } else {
+                  var value = secondQuery[i][otherHeaders[j]];
+                }
+                message += otherHeaders[j].toUpperCase() + ': ' + value + '<br>';
+              }
+            }
+            message += '<br>';
+          }
+
+          callback(message.substring(0, message.length-4));
+          canCallback = false;
+        }
+      });
     });
   } else {
     callback('');
@@ -152,44 +205,56 @@ function handleMessage(question) {
 
       switch (entities['intent'][0].value) {
         case 'show_patients':
+        //remove 'intent' entity
+        keys.splice( keys.indexOf('intent'), 1 );
+
+        var mainHeaders = ['id', 'age', 'gender', 'effects', 'response'];
+        var otherHeaders = keys.diff(mainHeaders);
+        var existingHeaders = keys.diff(otherHeaders);
+
         readContent(function (err, data) {
-          var queryResult = jsonQuery('study.patients[*' + createQuery(entities, keys) + ']', { data: data }).value;
-          formatResponse(queryResult, function(message) {
-            send(message);
-          });
+          var firstQuery = jsonQuery('[*' + createQuery(entities, existingHeaders, true) + '][id]', { data: data }).value;
+
+          if (otherHeaders.length > 0) {
+            //null counter to see if no results exist in all files
+            var nullCounter = 0;
+            readFiles(function (err, content) {
+              for (var i = 0; i < otherHeaders.length; i++) {
+                var secondQuery = jsonQuery('[*' + createQuery(entities, otherHeaders[i], false) + '][id]', { data: content }).value;
+                //remove results that differ from the firstQuery results
+                var someDiff = secondQuery.diff(firstQuery);
+                for (var i = 0; i < someDiff.length; i++) {
+                  secondQuery.splice( secondQuery.indexOf(someDiff[i]), 1 );
+                }
+              }
+              if (secondQuery != '') {
+                formatResponse(secondQuery, mainHeaders, otherHeaders, function (message) {
+                  send(message);
+                });
+              } else {
+                nullCounter++;
+                if (nullCounter == 2 /* num of files in db not including mainFile */) {
+                  formatResponse(secondQuery, mainHeaders, otherHeaders, function (message) {
+                    send(message);
+                  });
+                }
+              }
+            });
+          } else {
+            formatResponse(firstQuery, mainHeaders, otherHeaders, function (message) {
+              send(message);
+            });
+          }
         });
         break;
-        case 'show_studies':
-        readContent(function (err, data) {
-          var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
-          formatResponse(queryResult, function(message) {
-            send(message);
-          });
-        });
-        case 'show_patients_tmb':
-        if (Array.isArray(entities['TMB'])) {
-          readTMBContent(function (err, data) {
-            var queryResult = jsonQuery('[*TMB '+ entities['TMB'][0].value + ']', { data: data }).value;
-            readContent(function(err, data2) {
-              var msg = '';
-              for (var i = 0; i < queryResult.length; i++) {
-                var result = jsonQuery('study.patients[*id = '+ queryResult[i]['patients'] + ']', { data: data2 }).value;
-                formatResponse(result, function(message) {
-                  msg += message + '<br>';
-                });
-              }
-              formatResponse(result, function(message) {
-                send(msg.substring(0, msg.length-4));
-              });
-            });
-          });
-        }
+        default:
+        send('$intent');
         break;
       }
     } else {
       send('Sorry, I couldn\'t understand that.');
     }
-
+    //print elapsed time
     elapsed_time('Chat: ' + question.trim());
   });
 }

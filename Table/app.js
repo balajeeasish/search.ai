@@ -69,7 +69,7 @@ function readContent(callback) {
     callback(null, obj);
   });
 }
-function amReading(callback) {
+function readFiles(callback) {
   fs.readdir(testFolder, function(err, filenames) {
     if (err) throw err;
     filenames.forEach(function(filename) {
@@ -175,20 +175,17 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
     var canCallback = true;
 
     readContent(function (err, data) {
-      amReading(function (err, content) {
+      readFiles(function (err, content) {
         //get values
         var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
-
         if (otherHeaders.length > 0) {
           var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
-
           if (typeof secondQuery[0][otherHeaders[0]] == 'undefined') {
             canCallback = false;
           } else {
             canCallback = true;
           }
         }
-
         //each following row contains the info of each patient in the results
         if (canCallback) {
           for (var i = 0; i < firstQuery.length; i++) {
@@ -202,19 +199,18 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
               message += '<td>' + value + '</td>';
             }
 
-
-            for (var j = 0; j < otherHeaders.length; j++) {
-              if (Array.isArray(secondQuery[i][otherHeaders[j]])) {
-                var value = secondQuery[i][otherHeaders[j]].length;
-              } else {
-                var value = secondQuery[i][otherHeaders[j]];
+            if (otherHeaders.length > 0) {
+              for (var j = 0; j < otherHeaders.length; j++) {
+                if (Array.isArray(secondQuery[i][otherHeaders[j]])) {
+                  var value = secondQuery[i][otherHeaders[j]].length;
+                } else {
+                  var value = secondQuery[i][otherHeaders[j]];
+                }
+                message += '<td>' + value + '</td>';
               }
-              message += '<td>' + value + '</td>';
             }
+            message += '</tr>';
           }
-
-          message += '</tr>';
-
           message += '</tbody></table>';
         }
         if (canCallback) {
@@ -251,7 +247,7 @@ function handleMessage(question) {
           var firstQuery = jsonQuery('[*' + createQuery(entities, existingHeaders, true) + '][id]', { data: data }).value;
 
           if (otherHeaders.length > 0) {
-            amReading(function (err, content) {
+            readFiles(function (err, content) {
               for (var i = 0; i < otherHeaders.length; i++) {
                 var secondQuery = jsonQuery('[*' + createQuery(entities, otherHeaders[i], false) + '][id]', { data: content }).value;
                 //remove results that differ from the firstQuery results
@@ -271,14 +267,8 @@ function handleMessage(question) {
           }
         });
         break;
-        case 'show_studies':
-        readContent(function (err, data) {
-          //var queryResult = jsonQuery('study[*' + createQuery(entities, keys) + ']', { data: data }).value;
-          var queryResult = '';
-          formatResponse(queryResult, function(message) {
-            send(message);
-          });
-        });
+        default:
+        send('$intent');
         break;
       }
       //print the filters

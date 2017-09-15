@@ -1,34 +1,34 @@
 [
   {
     "id": "ABC1",
-    "TMB": 30
+    "ASM": 10
   },
   {
     "id": "ABC2",
-    "TMB": 40
+    "ASM": 15
   },
   {
     "id": "ABC3",
-    "TMB": 15
+    "ASM": 20
   },
   {
     "id": "ABE1",
-    "TMB": 35
+    "ASM": 12
   },
   {
     "id": "ABE2",
-    "TMB": 37
+    "ASM": 30
   },
   {
     "id": "ABF1",
-    "TMB": 35
+    "ASM": 5
   },
   {
     "id": "ABF2",
-    "TMB": 10
+    "ASM": 18
   },
   {
     "id": "ABF3",
-    "TMB": 45
+    "ASM": 20
   }
 ]
