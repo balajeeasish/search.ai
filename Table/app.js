@@ -155,24 +155,27 @@ function createFinalQuery(results) {
 //formats the result of the query in a table fashion
 function formatResponse(result, mainHeaders, otherHeaders, callback) {
   if (result.length > 0) {
+    var message = '<table id="table_msg">';
+    var keys = '';
+    if (otherHeaders.length > 0) {
+      keys = mainHeaders.concat(otherHeaders);
+    } else {
+      keys = mainHeaders;
+    }
+
+    //go through the keys array to get all the table headings
+    message += '<tr><thead>';
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i].toUpperCase();
+      message += '<th>' + key + '</th>';
+    }
+    message += '</tr></thead><tbody>';
+
+    //set a counter
+    var count = 0;
+
     readContent(function (err, data) {
       amReading(function (err, content) {
-        var message = '<table id="table_msg">';
-        var keys = '';
-        if (otherHeaders.length > 0) {
-          keys = mainHeaders.concat(otherHeaders);
-        } else {
-          keys = mainHeaders;
-        }
-
-        //go through the keys array to get all the table headings
-        message += '<tr><thead>';
-        for (var i = 0; i < keys.length; i++) {
-          var key = keys[i].toUpperCase();
-          message += '<th>' + key + '</th>';
-        }
-        message += '</tr></thead><tbody>';
-
         //get values
         var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
 
@@ -205,8 +208,13 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
           message += '</tr>';
         }
 
+
         message += '</tbody></table>';
-        callback(message);
+        //console.log(count);
+        if (count == 0) {
+          callback(message);
+          count++;
+        }
       });
     });
   } else {
@@ -248,13 +256,11 @@ function handleMessage(question) {
               }
               formatResponse(secondQuery, mainHeaders, otherHeaders, function (message) {
                 send(message);
-                elapsed_time('Table: ' + question.trim());
               });
             });
           } else {
             formatResponse(firstQuery, mainHeaders, otherHeaders, function (message) {
               send(message);
-              elapsed_time('Table: ' + question.trim());
             });
           }
         });
@@ -274,5 +280,7 @@ function handleMessage(question) {
     } else {
       send('Sorry, I couldn\'t understand that.');
     }
+    //print elapsed time
+    elapsed_time('Table: ' + question.trim());
   });
 }
