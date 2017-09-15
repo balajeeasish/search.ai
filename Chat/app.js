@@ -48,7 +48,7 @@ nsp.on('connection', function(socket){
 
 //parse JSON files for data in an async function but sync reading the files in the dir
 var fs = require('fs');
-const testFolder = 'db/'; /* main directory with data */
+const mainFolder = 'db/'; /* main directory with data */
 const mainFile = 'study.json'; /* main file with main headers */
 var fileArr = []; /* array to store names of files, except main file */
 
@@ -61,7 +61,7 @@ function readContent(callback) {
   });
 }
 //read other files than main file in the dir
-fs.readdirSync(testFolder).forEach(file => {
+fs.readdirSync(mainFolder).forEach(file => {
   if (file == mainFile || file == '.DS_Store') {
     return;
   } else {
@@ -71,7 +71,7 @@ fs.readdirSync(testFolder).forEach(file => {
 //parse through the files in the dir
 function readFiles(callback) {
   for (var i = 0; i < fileArr.length; i++) {
-    fs.readFile(testFolder + fileArr[i], 'utf-8', function(err, data) {
+    fs.readFile(mainFolder + fileArr[i], 'utf-8', function(err, data) {
       if (err) throw err;
       var obj = JSON.parse(data);
       callback(null, obj);

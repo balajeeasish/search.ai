@@ -85,8 +85,8 @@ body {
 }
 #submit-button {
 	float: right;
-	background-color: #618da8;/*76c982 */
-	color: #fff; /*55965e*/
+	background-color: #618da8;
+	color: #fff;
 	border-style: none;
 	font-size: 1.5em;
 	height: 10vh;
@@ -115,7 +115,7 @@ body {
 	margin-left: 15px;
 }
 #botmsg {
-	background-color: #87C2E5; /*ffd9ba*/
+	background-color: #87C2E5;
 	border-style: none;
 	overflow: auto;
 	word-wrap: break-word;
