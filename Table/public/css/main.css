@@ -77,10 +77,12 @@ body {
 }
 #table {
 	padding: 0px;
+	max-height: 60vh;
+	overflow: scroll;
+	border: 2px solid black;
 }
 #table_msg {
 	width:100%;
-	border: 2px solid black;
 }
 #table_msg th {
 	background-color: #0485d6;
