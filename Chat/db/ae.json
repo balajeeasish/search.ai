@@ -1,0 +1,2532 @@
+[
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID101",
+    "Adverse Event": "LIPASE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/1/16",
+    "RESOLUTION_DATE": "8/1/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID101",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/1/16",
+    "RESOLUTION_DATE": "6/15/12",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID101",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/14/16",
+    "RESOLUTION_DATE": "9/14/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID101",
+    "Adverse Event": "LIPASE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/8/16",
+    "RESOLUTION_DATE": "10/8/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID102",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/24/16",
+    "RESOLUTION_DATE": "5/26/12",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID102",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/2/16",
+    "RESOLUTION_DATE": "8/2/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID102",
+    "Adverse Event": "LIPASE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/16/16",
+    "RESOLUTION_DATE": "9/16/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID102",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/9/16",
+    "RESOLUTION_DATE": "10/9/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID103",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/10/16",
+    "RESOLUTION_DATE": "8/10/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID103",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/31/16",
+    "RESOLUTION_DATE": "8/31/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID103",
+    "Adverse Event": "PAIN (CHEST)",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/22/16",
+    "RESOLUTION_DATE": "8/2/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID104",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/9/16",
+    "RESOLUTION_DATE": "8/9/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID104",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/31/16",
+    "RESOLUTION_DATE": "8/31/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID104",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/16/16",
+    "RESOLUTION_DATE": "8/18/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID104",
+    "Adverse Event": "HYPOPIT",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/22/16",
+    "RESOLUTION_DATE": "9/22/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID104",
+    "Adverse Event": "HYPOTENSION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/16/16",
+    "RESOLUTION_DATE": "10/16/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID105",
+    "Adverse Event": "TRANSAMINITIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/13/16",
+    "RESOLUTION_DATE": "8/1/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID105",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/13/16",
+    "RESOLUTION_DATE": "8/13/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID105",
+    "Adverse Event": "HYPOTENSION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/20/16",
+    "RESOLUTION_DATE": "10/20/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID106",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/8/16",
+    "RESOLUTION_DATE": "5/26/12",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID106",
+    "Adverse Event": "LARYNGEAL INFLAMATION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/15/16",
+    "RESOLUTION_DATE": "8/15/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID106",
+    "Adverse Event": "HYPOTENSION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/24/16",
+    "RESOLUTION_DATE": "10/24/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID107",
+    "Adverse Event": "LARYNGEAL INFLAMATION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/16/16",
+    "RESOLUTION_DATE": "8/16/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID107",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/6/16",
+    "RESOLUTION_DATE": "9/6/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID107",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/27/16",
+    "RESOLUTION_DATE": "8/23/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID107",
+    "Adverse Event": "HYPOALBUNEMIA",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/27/16",
+    "RESOLUTION_DATE": "9/27/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID107",
+    "Adverse Event": "HYPOTENSION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/18/16",
+    "RESOLUTION_DATE": "10/18/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID108",
+    "Adverse Event": "LARYNGEAL INFLAMATION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/27/16",
+    "RESOLUTION_DATE": "8/27/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID108",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/19/16",
+    "RESOLUTION_DATE": "9/19/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID108",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/2/16",
+    "RESOLUTION_DATE": "8/18/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID108",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/2/16",
+    "RESOLUTION_DATE": "11/2/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID109",
+    "Adverse Event": "TRANSAMINITIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/28/16",
+    "RESOLUTION_DATE": "8/1/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID109",
+    "Adverse Event": "LARYNGEAL INFLAMATION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/28/16",
+    "RESOLUTION_DATE": "8/28/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID109",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/5/16",
+    "RESOLUTION_DATE": "11/5/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID110",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/16/16",
+    "RESOLUTION_DATE": "5/26/12",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID110",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "8/25/16",
+    "RESOLUTION_DATE": "8/25/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID110",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/30/16",
+    "RESOLUTION_DATE": "10/30/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID111",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/1/16",
+    "RESOLUTION_DATE": "9/1/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID111",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/23/16",
+    "RESOLUTION_DATE": "9/23/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID111",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/16/16",
+    "RESOLUTION_DATE": "8/23/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID111",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/16/16",
+    "RESOLUTION_DATE": "10/16/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID111",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/8/16",
+    "RESOLUTION_DATE": "11/8/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID112",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/3/16",
+    "RESOLUTION_DATE": "9/3/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID112",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/6/16",
+    "RESOLUTION_DATE": "11/6/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID113",
+    "Adverse Event": "SYNCOPE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/5/16",
+    "RESOLUTION_DATE": "9/5/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID113",
+    "Adverse Event": "TRANSAMINITIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/5/16",
+    "RESOLUTION_DATE": "8/1/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID113",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/29/16",
+    "RESOLUTION_DATE": "9/29/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID113",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/23/16",
+    "RESOLUTION_DATE": "10/23/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID113",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/16/16",
+    "RESOLUTION_DATE": "11/16/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID114",
+    "Adverse Event": "SYNCOPE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/7/16",
+    "RESOLUTION_DATE": "9/7/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID114",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/28/16",
+    "RESOLUTION_DATE": "9/28/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID114",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/28/16",
+    "RESOLUTION_DATE": "5/26/12",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID114",
+    "Adverse Event": "ALK PHOSPHATASE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/21/16",
+    "RESOLUTION_DATE": "10/21/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID114",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/12/16",
+    "RESOLUTION_DATE": "11/12/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID115",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/27/16",
+    "RESOLUTION_DATE": "8/23/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID115",
+    "Adverse Event": "INSOMNIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/18/16",
+    "RESOLUTION_DATE": "11/18/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID116",
+    "Adverse Event": "SYNCOPE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/16/16",
+    "RESOLUTION_DATE": "9/16/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID116",
+    "Adverse Event": "INSOMNIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/21/16",
+    "RESOLUTION_DATE": "11/21/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID117",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/19/16",
+    "RESOLUTION_DATE": "9/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID117",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/19/16",
+    "RESOLUTION_DATE": "9/19/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID117",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/12/16",
+    "RESOLUTION_DATE": "10/12/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID117",
+    "Adverse Event": "PANCREATIITIS",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/2/16",
+    "RESOLUTION_DATE": "11/2/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID117",
+    "Adverse Event": "INSOMNIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/26/16",
+    "RESOLUTION_DATE": "11/26/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID118",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/16/16",
+    "RESOLUTION_DATE": "10/16/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID118",
+    "Adverse Event": "PANCREATIITIS",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/7/16",
+    "RESOLUTION_DATE": "11/7/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID118",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/29/16",
+    "RESOLUTION_DATE": "11/29/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID119",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "9/26/16",
+    "RESOLUTION_DATE": "9/26/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID119",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/20/16",
+    "RESOLUTION_DATE": "10/20/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID119",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/10/16",
+    "RESOLUTION_DATE": "8/23/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID119",
+    "Adverse Event": "PANCREATIITIS",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/10/16",
+    "RESOLUTION_DATE": "11/10/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID119",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/2/16",
+    "RESOLUTION_DATE": "12/2/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID120",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/2/16",
+    "RESOLUTION_DATE": "10/2/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID120",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/24/16",
+    "RESOLUTION_DATE": "10/24/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID120",
+    "Adverse Event": "PLATLETS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/11/16",
+    "RESOLUTION_DATE": "9/4/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID120",
+    "Adverse Event": "PANCREATIITIS",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/17/16",
+    "RESOLUTION_DATE": "11/17/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID120",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/11/16",
+    "RESOLUTION_DATE": "12/11/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID121",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/23/16",
+    "RESOLUTION_DATE": "10/23/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID121",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/15/16",
+    "RESOLUTION_DATE": "11/15/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID121",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/6/16",
+    "RESOLUTION_DATE": "12/6/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID122",
+    "Adverse Event": "CONFUSION",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/30/16",
+    "RESOLUTION_DATE": "8/31/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID122",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/7/16",
+    "RESOLUTION_DATE": "10/7/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID122",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/30/16",
+    "RESOLUTION_DATE": "10/30/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID122",
+    "Adverse Event": "ANEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/20/16",
+    "RESOLUTION_DATE": "11/20/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID122",
+    "Adverse Event": "HYPOPIT",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/13/16",
+    "RESOLUTION_DATE": "12/13/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID123",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/8/16",
+    "RESOLUTION_DATE": "10/8/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID123",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/29/16",
+    "RESOLUTION_DATE": "10/29/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID123",
+    "Adverse Event": "TRANSAMINITIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/22/16",
+    "RESOLUTION_DATE": "11/22/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID123",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/22/16",
+    "RESOLUTION_DATE": "9/24/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID123",
+    "Adverse Event": "HYPOPIT",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/14/16",
+    "RESOLUTION_DATE": "12/14/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID124",
+    "Adverse Event": "PLATLETS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/12/16",
+    "RESOLUTION_DATE": "9/4/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID124",
+    "Adverse Event": "TRANSAMINITIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/19/16",
+    "RESOLUTION_DATE": "11/19/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID124",
+    "Adverse Event": "HYPOPHYSITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/12/16",
+    "RESOLUTION_DATE": "12/12/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID125",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/8/16",
+    "RESOLUTION_DATE": "9/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID125",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/8/16",
+    "RESOLUTION_DATE": "10/8/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID125",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/30/16",
+    "RESOLUTION_DATE": "10/30/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID125",
+    "Adverse Event": "HYPOPHYSITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/14/16",
+    "RESOLUTION_DATE": "12/14/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID126",
+    "Adverse Event": "CONFUSION",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/7/16",
+    "RESOLUTION_DATE": "8/31/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID126",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/14/16",
+    "RESOLUTION_DATE": "10/14/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID126",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/7/16",
+    "RESOLUTION_DATE": "11/7/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID126",
+    "Adverse Event": "PANCREATIITIS",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/28/16",
+    "RESOLUTION_DATE": "11/28/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID126",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/22/16",
+    "RESOLUTION_DATE": "12/22/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID127",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/16/16",
+    "RESOLUTION_DATE": "10/16/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID127",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/8/16",
+    "RESOLUTION_DATE": "11/8/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID127",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/30/16",
+    "RESOLUTION_DATE": "9/24/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID127",
+    "Adverse Event": "PANCREATIITIS",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/30/16",
+    "RESOLUTION_DATE": "11/30/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID127",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/21/16",
+    "RESOLUTION_DATE": "12/21/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID128",
+    "Adverse Event": "ELEVATED ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/17/16",
+    "RESOLUTION_DATE": "10/17/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID128",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/9/16",
+    "RESOLUTION_DATE": "11/9/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID128",
+    "Adverse Event": "EDEMA",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/26/16",
+    "RESOLUTION_DATE": "12/26/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID129",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/19/16",
+    "RESOLUTION_DATE": "9/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID129",
+    "Adverse Event": "ELEVATED ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/19/16",
+    "RESOLUTION_DATE": "10/19/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID129",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/25/16",
+    "RESOLUTION_DATE": "12/25/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID130",
+    "Adverse Event": "CONFUSION",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/12/16",
+    "RESOLUTION_DATE": "8/31/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID130",
+    "Adverse Event": "ELEVATED ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/20/16",
+    "RESOLUTION_DATE": "10/20/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID130",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/12/16",
+    "RESOLUTION_DATE": "11/12/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID130",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/4/16",
+    "RESOLUTION_DATE": "12/4/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID130",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/25/16",
+    "RESOLUTION_DATE": "12/25/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID131",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/22/16",
+    "RESOLUTION_DATE": "10/22/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID131",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/12/16",
+    "RESOLUTION_DATE": "11/12/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID131",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/6/16",
+    "RESOLUTION_DATE": "9/24/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID131",
+    "Adverse Event": "NAUSEA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/6/16",
+    "RESOLUTION_DATE": "12/6/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID132",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "10/24/16",
+    "RESOLUTION_DATE": "10/24/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID132",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/16/16",
+    "RESOLUTION_DATE": "11/16/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID132",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/31/16",
+    "RESOLUTION_DATE": "9/18/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID132",
+    "Adverse Event": "NAUSEA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/7/16",
+    "RESOLUTION_DATE": "12/7/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID132",
+    "Adverse Event": "HYPOPHYSITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/31/16",
+    "RESOLUTION_DATE": "12/31/16",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID133",
+    "Adverse Event": "PLATLETS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/1/16",
+    "RESOLUTION_DATE": "9/29/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID133",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/1/16",
+    "RESOLUTION_DATE": "11/1/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID134",
+    "Adverse Event": "CONFUSION",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/28/16",
+    "RESOLUTION_DATE": "8/31/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID134",
+    "Adverse Event": "WEIGHT LOSS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/21/16",
+    "RESOLUTION_DATE": "12/21/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID134",
+    "Adverse Event": "HEADACHE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/13/17",
+    "RESOLUTION_DATE": "1/13/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID135",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/4/16",
+    "RESOLUTION_DATE": "11/4/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID135",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/20/16",
+    "RESOLUTION_DATE": "9/24/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID135",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/27/16",
+    "RESOLUTION_DATE": "11/27/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID135",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/20/16",
+    "RESOLUTION_DATE": "12/20/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID135",
+    "Adverse Event": "HEADACHE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/12/17",
+    "RESOLUTION_DATE": "1/12/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID136",
+    "Adverse Event": "AST",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/7/16",
+    "RESOLUTION_DATE": "11/7/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID136",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/29/16",
+    "RESOLUTION_DATE": "11/29/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID136",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/20/16",
+    "RESOLUTION_DATE": "12/20/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID136",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/11/17",
+    "RESOLUTION_DATE": "1/11/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID137",
+    "Adverse Event": "PLATLETS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/12/16",
+    "RESOLUTION_DATE": "9/29/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID137",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/4/16",
+    "RESOLUTION_DATE": "12/4/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID137",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/25/16",
+    "RESOLUTION_DATE": "12/25/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID137",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/17/17",
+    "RESOLUTION_DATE": "1/17/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID138",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/8/16",
+    "RESOLUTION_DATE": "9/22/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID138",
+    "Adverse Event": "ELEVATED ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/14/16",
+    "RESOLUTION_DATE": "11/14/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID138",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/8/16",
+    "RESOLUTION_DATE": "12/8/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID138",
+    "Adverse Event": "HEADACHE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/31/16",
+    "RESOLUTION_DATE": "12/31/16",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID138",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/22/17",
+    "RESOLUTION_DATE": "1/22/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID139",
+    "Adverse Event": "HEADACHE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/2/17",
+    "RESOLUTION_DATE": "1/2/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID139",
+    "Adverse Event": "ANOREXIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/26/17",
+    "RESOLUTION_DATE": "1/26/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID140",
+    "Adverse Event": "ELEVATED ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/16/16",
+    "RESOLUTION_DATE": "11/16/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID140",
+    "Adverse Event": "AMYLASE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/24/17",
+    "RESOLUTION_DATE": "9/18/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID140",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/9/16",
+    "RESOLUTION_DATE": "12/9/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID140",
+    "Adverse Event": "ANOREXIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/24/17",
+    "RESOLUTION_DATE": "1/24/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID141",
+    "Adverse Event": "PLATLETS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/21/16",
+    "RESOLUTION_DATE": "9/29/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID141",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/21/16",
+    "RESOLUTION_DATE": "11/21/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID141",
+    "Adverse Event": "DEHYDRATION",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/13/16",
+    "RESOLUTION_DATE": "12/13/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID141",
+    "Adverse Event": "HEADACHE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/6/17",
+    "RESOLUTION_DATE": "1/6/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID141",
+    "Adverse Event": "ANOREXIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/28/17",
+    "RESOLUTION_DATE": "1/28/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID142",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/10/16",
+    "RESOLUTION_DATE": "9/22/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID142",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/18/16",
+    "RESOLUTION_DATE": "11/18/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID142",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/10/16",
+    "RESOLUTION_DATE": "12/10/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID142",
+    "Adverse Event": "ANOREXIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/22/17",
+    "RESOLUTION_DATE": "1/22/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID143",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/6/17",
+    "RESOLUTION_DATE": "10/3/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID143",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/22/16",
+    "RESOLUTION_DATE": "11/22/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID143",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/13/16",
+    "RESOLUTION_DATE": "12/13/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID143",
+    "Adverse Event": "CONFUSION",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/6/17",
+    "RESOLUTION_DATE": "1/6/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID143",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/29/17",
+    "RESOLUTION_DATE": "1/29/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID144",
+    "Adverse Event": "HYPOALBUNEMIA",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/30/17",
+    "RESOLUTION_DATE": "10/11/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID144",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/22/16",
+    "RESOLUTION_DATE": "11/22/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID144",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/16/16",
+    "RESOLUTION_DATE": "12/16/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID144",
+    "Adverse Event": "CONFUSION",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/7/17",
+    "RESOLUTION_DATE": "1/7/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID144",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/30/17",
+    "RESOLUTION_DATE": "1/30/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID145",
+    "Adverse Event": "ALK PHOSPHATASE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/12/17",
+    "RESOLUTION_DATE": "1/12/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID145",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/4/17",
+    "RESOLUTION_DATE": "2/4/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID146",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/23/16",
+    "RESOLUTION_DATE": "9/22/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID146",
+    "Adverse Event": "ITCHING",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "11/30/16",
+    "RESOLUTION_DATE": "11/30/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID146",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/3/17",
+    "RESOLUTION_DATE": "2/3/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID147",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/16/17",
+    "RESOLUTION_DATE": "10/3/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID147",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/26/16",
+    "RESOLUTION_DATE": "12/26/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID147",
+    "Adverse Event": "ALK PHOSPHATASE",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/16/17",
+    "RESOLUTION_DATE": "1/16/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID147",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/7/17",
+    "RESOLUTION_DATE": "2/7/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID148",
+    "Adverse Event": "HYPOALBUNEMIA",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/16/17",
+    "RESOLUTION_DATE": "10/11/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID148",
+    "Adverse Event": "LYMPHATICS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/10/16",
+    "RESOLUTION_DATE": "12/10/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID148",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/16/17",
+    "RESOLUTION_DATE": "2/16/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID149",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/7/16",
+    "RESOLUTION_DATE": "10/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID149",
+    "Adverse Event": "LYMPHATICS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/7/16",
+    "RESOLUTION_DATE": "12/7/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID149",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/29/16",
+    "RESOLUTION_DATE": "12/29/16",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID149",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/21/17",
+    "RESOLUTION_DATE": "1/21/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID149",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/12/17",
+    "RESOLUTION_DATE": "2/12/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID150",
+    "Adverse Event": "NEUROPATHY",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/7/17",
+    "RESOLUTION_DATE": "9/22/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID150",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/21/17",
+    "RESOLUTION_DATE": "2/21/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID151",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/30/17",
+    "RESOLUTION_DATE": "10/3/10",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID151",
+    "Adverse Event": "DRY MOUTH",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/15/16",
+    "RESOLUTION_DATE": "12/15/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID151",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/7/17",
+    "RESOLUTION_DATE": "1/7/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID151",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/22/17",
+    "RESOLUTION_DATE": "2/22/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID152",
+    "Adverse Event": "HYPOALBUNEMIA",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/19/17",
+    "RESOLUTION_DATE": "10/11/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID152",
+    "Adverse Event": "DRY MOUTH",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/16/16",
+    "RESOLUTION_DATE": "12/16/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID152",
+    "Adverse Event": "HYPOPIT",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/6/17",
+    "RESOLUTION_DATE": "1/6/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID152",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/19/17",
+    "RESOLUTION_DATE": "2/19/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID153",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/20/16",
+    "RESOLUTION_DATE": "10/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID153",
+    "Adverse Event": "DRY MOUTH",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/20/16",
+    "RESOLUTION_DATE": "12/20/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID153",
+    "Adverse Event": "HYPOPIT",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/12/17",
+    "RESOLUTION_DATE": "1/12/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID153",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/5/17",
+    "RESOLUTION_DATE": "2/5/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID153",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/26/17",
+    "RESOLUTION_DATE": "2/26/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID154",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/17/17",
+    "RESOLUTION_DATE": "10/19/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID154",
+    "Adverse Event": "DRY MOUTH",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/24/16",
+    "RESOLUTION_DATE": "12/24/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID154",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/9/17",
+    "RESOLUTION_DATE": "2/9/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID154",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/5/17",
+    "RESOLUTION_DATE": "3/5/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID155",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/19/16",
+    "RESOLUTION_DATE": "12/19/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID155",
+    "Adverse Event": "HYPOPIT",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/10/17",
+    "RESOLUTION_DATE": "1/10/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID155",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/3/17",
+    "RESOLUTION_DATE": "2/3/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID155",
+    "Adverse Event": "FATIGUE",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/25/17",
+    "RESOLUTION_DATE": "2/25/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID156",
+    "Adverse Event": "HYPOALBUNEMIA",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/27/17",
+    "RESOLUTION_DATE": "10/11/10",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID156",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/21/16",
+    "RESOLUTION_DATE": "12/21/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID156",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/12/17",
+    "RESOLUTION_DATE": "1/12/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID156",
+    "Adverse Event": "LIPASE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/5/17",
+    "RESOLUTION_DATE": "2/5/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID157",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/25/16",
+    "RESOLUTION_DATE": "10/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID157",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "12/25/16",
+    "RESOLUTION_DATE": "12/25/16",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID157",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/18/17",
+    "RESOLUTION_DATE": "1/18/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID157",
+    "Adverse Event": "LIPASE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/8/17",
+    "RESOLUTION_DATE": "2/8/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID157",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/1/17",
+    "RESOLUTION_DATE": "3/1/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID158",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/22/17",
+    "RESOLUTION_DATE": "10/19/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID158",
+    "Adverse Event": "ALT",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/1/17",
+    "RESOLUTION_DATE": "1/1/17",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID158",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/22/17",
+    "RESOLUTION_DATE": "1/22/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID158",
+    "Adverse Event": "LIPASE",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/14/17",
+    "RESOLUTION_DATE": "2/14/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID158",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/7/17",
+    "RESOLUTION_DATE": "3/7/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID159",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/25/17",
+    "RESOLUTION_DATE": "1/25/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID159",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/15/17",
+    "RESOLUTION_DATE": "2/15/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID159",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/10/17",
+    "RESOLUTION_DATE": "3/10/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID160",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/13/17",
+    "RESOLUTION_DATE": "11/28/11",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID160",
+    "Adverse Event": "FLU-LIKE SYNDROME",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/20/17",
+    "RESOLUTION_DATE": "2/20/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID160",
+    "Adverse Event": "ANOREXIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/13/17",
+    "RESOLUTION_DATE": "3/13/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID161",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/11/17",
+    "RESOLUTION_DATE": "10/4/10",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID161",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/1/17",
+    "RESOLUTION_DATE": "2/1/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID161",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/22/17",
+    "RESOLUTION_DATE": "2/22/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID161",
+    "Adverse Event": "ANOREXIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/16/17",
+    "RESOLUTION_DATE": "3/16/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID162",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/4/17",
+    "RESOLUTION_DATE": "10/19/10",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID162",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/12/17",
+    "RESOLUTION_DATE": "1/12/17",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID162",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/4/17",
+    "RESOLUTION_DATE": "2/4/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID162",
+    "Adverse Event": "PANHYPOPITUARTISM",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/27/17",
+    "RESOLUTION_DATE": "2/27/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID162",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/21/17",
+    "RESOLUTION_DATE": "3/21/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID163",
+    "Adverse Event": "HYPOTENSION",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/1/17",
+    "RESOLUTION_DATE": "12/21/11",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID163",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/15/17",
+    "RESOLUTION_DATE": "1/15/17",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID163",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/8/17",
+    "RESOLUTION_DATE": "2/8/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID163",
+    "Adverse Event": "PAIN (CHEST)",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/1/17",
+    "RESOLUTION_DATE": "3/1/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID163",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/25/17",
+    "RESOLUTION_DATE": "3/25/17",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID164",
+    "Adverse Event": "HYPERGLYCEMIA",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/21/17",
+    "RESOLUTION_DATE": "11/28/11",
+    "Timepoint": "D"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID164",
+    "Adverse Event": "BILIRUBIN",
+    "Grade": 2,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "1/14/17",
+    "RESOLUTION_DATE": "1/14/17",
+    "Timepoint": "A"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID164",
+    "Adverse Event": "UVETIS",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/4/17",
+    "RESOLUTION_DATE": "2/4/17",
+    "Timepoint": "B"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID164",
+    "Adverse Event": "PAIN (CHEST)",
+    "Grade": 1,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "2/28/17",
+    "RESOLUTION_DATE": "2/28/17",
+    "Timepoint": "C"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Subject ID": "PID164",
+    "Adverse Event": "COLITIS",
+    "Grade": 3,
+    "RELATIONSHIP TO AGENT": "NOS",
+    "ONSET_DATE": "3/21/17",
+    "RESOLUTION_DATE": "3/21/17",
+    "Timepoint": "D"
+  }
+]

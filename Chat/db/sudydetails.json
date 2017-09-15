@@ -1,0 +1,194 @@
+[
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "John Smith",
+    "Role": "Study Director",
+    "icore_role": "STUDY_DIRECTOR",
+    "user_name": "johnsmith",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "William Border",
+    "Role": "Study PI",
+    "icore_role": "PRINCIPAL_INVESTIGATOR",
+    "user_name": "williamborder",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Jonathan Abbas",
+    "Role": "Oncologist",
+    "icore_role": "",
+    "user_name": "jonathanabbas",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Daniel White",
+    "Role": "Researcher",
+    "icore_role": "RESEARCHER",
+    "user_name": "danielwhite",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Benjamin Moore",
+    "Role": "Bioinformatician",
+    "icore_role": "BIOINFORMATICIAN",
+    "user_name": "benjaminmoore",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Timothy Aadland",
+    "Role": "Radiologist",
+    "icore_role": "",
+    "user_name": "timothyaadland",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Sophie Martin",
+    "Role": "Pathologist",
+    "icore_role": "PATHOLOGIST",
+    "user_name": "sophiemartin",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Emma Robinson",
+    "Role": "Oncology Nurse",
+    "icore_role": "",
+    "user_name": "emmarobinson",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Elizabeth Ellis",
+    "Role": "Oncology Nurse Practitioner",
+    "icore_role": "",
+    "user_name": "elizabethellis",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Sophia Hunt",
+    "Role": "Patient Navigator",
+    "icore_role": "",
+    "user_name": "sophiahunt",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Susan Sears",
+    "Role": "Physician Assistant",
+    "icore_role": "",
+    "user_name": "susansears",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Mia Rose",
+    "Role": "Oncology Social Worker",
+    "icore_role": "",
+    "user_name": "miarose",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Christopher Ben",
+    "Role": "Registered Dietitian (RD)",
+    "icore_role": "",
+    "user_name": "christopherben",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Ann Lavis",
+    "Role": "Diagnostic Radiologists",
+    "icore_role": "",
+    "user_name": "annlavis",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Olivia Maddocks",
+    "Role": "Rehabilitation Thrapist",
+    "icore_role": "",
+    "user_name": "oliviamaddocks",
+    "Study/Patient Care": "Study Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Elliot Abbey",
+    "Role": "Oncologist",
+    "icore_role": "",
+    "user_name": "elliotabbey",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Braden Clark",
+    "Role": "Physician Assistant",
+    "icore_role": "",
+    "user_name": "bradenclark",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Bradley Lewis",
+    "Role": "Diagnostic Radiologists",
+    "icore_role": "",
+    "user_name": "bradleylewis",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Garth Aasen",
+    "Role": "Pathologist",
+    "icore_role": "",
+    "user_name": "garthaasen",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Martina Rivera",
+    "Role": "Oncology Nurse",
+    "icore_role": "",
+    "user_name": "martinarivera",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Lucia Gomez",
+    "Role": "Oncology Nurse Practitioner",
+    "icore_role": "",
+    "user_name": "luciagomez",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Martina Rivera",
+    "Role": "Radiologist",
+    "icore_role": "",
+    "user_name": "martinarivera",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Lucia Gomez",
+    "Role": "Patient Navigator",
+    "icore_role": "",
+    "user_name": "luciagomez",
+    "Study/Patient Care": "Personal Care Team"
+  },
+  {
+    "Study ID": "PICI-MS-101",
+    "Name": "Jimena Diaz",
+    "Role": "Oncology Social Worker",
+    "icore_role": "",
+    "user_name": "jimenadiaz",
+    "Study/Patient Care": "Personal Care Team"
+  }
+]

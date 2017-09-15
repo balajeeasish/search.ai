@@ -29,7 +29,7 @@ app.use(express.static(__dirname + '/public'));
 
 //call Wit API with the SERVER_ACCESS_TOKEN
 const Wit = require('node-wit').Wit;
-const wit = new Wit({accessToken: 'GVBQOTI2MKXYIM265DOVIKII44BSWIFF'});
+const wit = new Wit({accessToken: 'BJK4FO5VSSJFSQ2324HTQFWQ6SPO5UQD'});
 
 //set up json-query
 var jsonQuery = require('json-query');
@@ -49,7 +49,7 @@ nsp.on('connection', function(socket){
 //parse JSON files for data in an async function but sync reading the files in the dir
 var fs = require('fs');
 const mainFolder = 'db/'; /* main directory with data */
-const mainFile = 'study.json'; /* main file with main headers */
+const mainFile = 'subjects.json'; /* main file with main headers */
 var fileArr = []; /* array to store names of files, except main file */
 
 //read main file
@@ -124,7 +124,7 @@ function createFinalQuery(results) {
   var query = '';
   if (results.length > 0) {
     for (var i = 0; i < results.length; i++) {
-      query += 'id=' + results[i] + ' | ';
+      query += 'Subject ID=' + results[i] + ' | ';
     }
     return query.substring(0, query.length-3);
   } else {
@@ -217,19 +217,19 @@ function handleMessage(question) {
         //remove 'intent' entity
         keys.splice( keys.indexOf('intent'), 1 );
 
-        var mainHeaders = ['id', 'age', 'gender', 'effects', 'response']; /* main headers that always show for table */
+        var mainHeaders = ['StudyID', 'SubjectID', 'Sex', 'DiagnosisAge', 'Race']; /* main headers that always show for table ** no spaces ** */
         var otherHeaders = keys.diff(mainHeaders); /* if user queries for headers that are not the main */
         var existingHeaders = keys.diff(otherHeaders); /* the headers the user queried that are mainHeaders */
 
         readContent(function (err, data) {
           //initial query results of existingHeaders the user's query
-          var firstQuery = jsonQuery('[*' + createQuery(entities, existingHeaders, true) + '][id]', { data: data }).value;
+          var firstQuery = jsonQuery('[*' + createQuery(entities, existingHeaders, true) + '][Subject ID]', { data: data }).value;
           //if otherHeaders query for those
           if (otherHeaders.length > 0) {
             //null counter to see if no results exist in all files
             var nullCounter = 0;
             readFiles(function (err, content) {
-              var secondQuery = jsonQuery('[*' + createQuery(entities, otherHeaders, false) + '][id]', { data: content }).value;
+              var secondQuery = jsonQuery('[*' + createQuery(entities, otherHeaders, false) + '][Subject ID]', { data: content }).value;
               //remove results that differ from the firstQuery results
               var someDiff = secondQuery.diff(firstQuery);
               for (var i = 0; i < someDiff.length; i++) {
