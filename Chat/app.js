@@ -1,6 +1,5 @@
 //Timer for each search
 var start = process.hrtime();
-
 var elapsed_time = function(note){
   var precision = 3; // 3 decimal places
   var elapsed = process.hrtime(start)[1] / 1000000; // divide by a million to get nano to milli
@@ -47,12 +46,13 @@ nsp.on('connection', function(socket){
   });
 });
 
-//parse JSON files for data in an async function
+//parse JSON files for data in an async function but sync reading the files in the dir
 var fs = require('fs');
-const testFolder = 'db/';
-const mainFile = 'study.json';
-var fileArr = [];
+const testFolder = 'db/'; /* main directory with data */
+const mainFile = 'study.json'; /* main file with main headers */
+var fileArr = []; /* array to store names of files, except main file */
 
+//read main file
 function readContent(callback) {
   fs.readFile('db/' + mainFile, 'utf8', function (err, data) {
     if (err) throw err;
@@ -60,6 +60,7 @@ function readContent(callback) {
     callback(null, obj);
   });
 }
+//read other files than main file in the dir
 fs.readdirSync(testFolder).forEach(file => {
   if (file == mainFile || file == '.DS_Store') {
     return;
@@ -67,6 +68,7 @@ fs.readdirSync(testFolder).forEach(file => {
     fileArr.push(file);
   }
 });
+//parse through the files in the dir
 function readFiles(callback) {
   for (var i = 0; i < fileArr.length; i++) {
     fs.readFile(testFolder + fileArr[i], 'utf-8', function(err, data) {
@@ -99,24 +101,17 @@ function insertSpaces(s, callback) {
 }
 
 //create the initial query statements for the json-query module
-function createQuery(entities, keys, firstQuery) {
+function createQuery(entities, keys) {
   var query = '';
   if (keys.length == 0) {
     return query;
   } else {
-    if (firstQuery) {
-      for (var i = 0; i < keys.length; i++) {
-        //insertSpaces() gives spaces to the entity keys to properly query the JSON files
+    for (var i = 0; i < keys.length; i++) {
+      //insertSpaces() gives spaces to the entity keys to properly query the JSON files
+      if (keys[i] == 'TMB' || keys[i] == 'ASM') {
+        query += insertSpaces(keys[i]) + entities[keys[i]][0].value + ' & ';
+      } else {
         query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
-      }
-    } else {
-      for (var i = 0; i < keys.length; i++) {
-        //insertSpaces() gives spaces to the entity keys to properly query the JSON files
-        if (keys[i] == 'TMB' || keys[i] == 'ASM') {
-          query += insertSpaces(keys[i]) + entities[keys[i]][0].value + ' & ';
-        } else {
-          query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
-        }
       }
     }
   }
@@ -124,7 +119,7 @@ function createQuery(entities, keys, firstQuery) {
   return query.substring(0, query.length-3);
 }
 
-//create final query statement
+//create final query statement for format response with ID's
 function createFinalQuery(results) {
   var query = '';
   if (results.length > 0) {
@@ -140,35 +135,38 @@ function createFinalQuery(results) {
 //formats the result of the query in a readable fashion
 function formatResponse(result, mainHeaders, otherHeaders, callback) {
   if (result.length > 0) {
+    //start out message
     var message = '';
     var keys = '';
+    //add otherHeaders to keys if it exists
     if (otherHeaders.length > 0) {
       keys = mainHeaders.concat(otherHeaders);
     } else {
       keys = mainHeaders;
     }
-    //set a counter
+    //set a bool
     var canCallback = true;
 
     readContent(function (err, data) {
       readFiles(function (err, content) {
-        //get values
+        //get values from the result of the query
         var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
         if (otherHeaders.length > 0) {
           var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
+          //only if the secondQuery  has defined values, send callback message
           if (typeof secondQuery[0][insertSpaces(otherHeaders[0])] == 'undefined') {
             canCallback = false;
           } else {
             canCallback = true;
           }
         }
-        //each following row contains the info of each patient in the results
+        //print patient information in clusters with line breaks in the results
         if (canCallback) {
           for (var i = 0; i < firstQuery.length; i++) {
             for (var j = 0; j < mainHeaders.length; j++) {
               //insertSpaces for mainHeaders
               mainHeaders[j] = insertSpaces(mainHeaders[j]);
-
+              //if the value is an array, print length
               if (Array.isArray(firstQuery[i][mainHeaders[j]])) {
                 var value = firstQuery[i][mainHeaders[j]].length;
               } else {
@@ -176,11 +174,12 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
               }
               message += mainHeaders[j].toUpperCase() + ': ' + value + '<br>';
             }
+            //if otherHeaders exists, print that information too
             if (otherHeaders.length > 0) {
               for (var j = 0; j < otherHeaders.length; j++) {
                 //insertSpaces for otherHeaders
                 otherHeaders[j] = insertSpaces(otherHeaders[j]);
-
+                //if the value is an array, print length
                 if (Array.isArray(secondQuery[i][otherHeaders[j]])) {
                   var value = secondQuery[i][otherHeaders[j]].length;
                 } else {
@@ -191,7 +190,7 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
             }
             message += '<br>';
           }
-
+          //callback message
           callback(message.substring(0, message.length-4));
           canCallback = false;
         }
@@ -212,19 +211,20 @@ function handleMessage(question) {
       for (var i = 0; i < Object.keys(entities).length; i++) {
         keys[i] = Object.keys(entities)[i];
       }
-
+      //switch-case statement for different intents
       switch (entities['intent'][0].value) {
         case 'show_patients':
         //remove 'intent' entity
         keys.splice( keys.indexOf('intent'), 1 );
 
-        var mainHeaders = ['id', 'age', 'gender', 'effects', 'response'];
-        var otherHeaders = keys.diff(mainHeaders);
-        var existingHeaders = keys.diff(otherHeaders);
+        var mainHeaders = ['id', 'age', 'gender', 'effects', 'response']; /* main headers that always show for table */
+        var otherHeaders = keys.diff(mainHeaders); /* if user queries for headers that are not the main */
+        var existingHeaders = keys.diff(otherHeaders); /* the headers the user queried that are mainHeaders */
 
         readContent(function (err, data) {
+          //initial query results of existingHeaders the user's query
           var firstQuery = jsonQuery('[*' + createQuery(entities, existingHeaders, true) + '][id]', { data: data }).value;
-
+          //if otherHeaders query for those
           if (otherHeaders.length > 0) {
             //null counter to see if no results exist in all files
             var nullCounter = 0;
@@ -235,16 +235,16 @@ function handleMessage(question) {
               for (var i = 0; i < someDiff.length; i++) {
                 secondQuery.splice( secondQuery.indexOf(someDiff[i]), 1 );
               }
+              //if secondQuery has results, format the results
               if (secondQuery != '') {
                 formatResponse(secondQuery, mainHeaders, otherHeaders, function (message) {
                   send(message);
                 });
               } else {
                 nullCounter++;
+                //only if there are no results in all the queries, then send error message
                 if (nullCounter == fileArr.length) {
-                  formatResponse(secondQuery, mainHeaders, otherHeaders, function (message) {
-                    send(message);
-                  });
+                  send('');
                 }
               }
             });
