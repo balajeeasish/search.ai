@@ -128,7 +128,7 @@ function createQuery(entities, keys, firstQuery) {
         query += insertSpaces(keys[i]) + '=' + entities[keys[i]][0].value + ' & ';
       }
     } else {
-      if (keys == 'TMB') {
+      if (keys == 'TMB' || keys == 'ASM') {
         query += insertSpaces(keys) + entities[keys][0].value + ' & ';
       } else {
         query += insertSpaces(keys) + '=' + entities[keys][0].value + ' & ';
@@ -172,28 +172,36 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
     message += '</tr></thead><tbody>';
 
     //set a counter
-    var count = 0;
+    var canCallback = true;
 
     readContent(function (err, data) {
       amReading(function (err, content) {
         //get values
         var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
 
-        //each following row contains the info of each patient in the results
-        for (var i = 0; i < firstQuery.length; i++) {
-          message += '<tr>';
-          for (var j = 0; j < mainHeaders.length; j++) {
-            if (Array.isArray(firstQuery[i][mainHeaders[j]])) {
-              var value = firstQuery[i][mainHeaders[j]].length;
-            } else {
-              var value = firstQuery[i][mainHeaders[j]];
-            }
-            message += '<td>' + value + '</td>';
+        if (otherHeaders.length > 0) {
+          var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
+
+          if (typeof secondQuery[0][otherHeaders[0]] == 'undefined') {
+            canCallback = false;
+          } else {
+            canCallback = true;
           }
+        }
 
-          if (otherHeaders.length > 0) {
+        //each following row contains the info of each patient in the results
+        if (canCallback) {
+          for (var i = 0; i < firstQuery.length; i++) {
+            message += '<tr>';
+            for (var j = 0; j < mainHeaders.length; j++) {
+              if (Array.isArray(firstQuery[i][mainHeaders[j]])) {
+                var value = firstQuery[i][mainHeaders[j]].length;
+              } else {
+                var value = firstQuery[i][mainHeaders[j]];
+              }
+              message += '<td>' + value + '</td>';
+            }
 
-            var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
 
             for (var j = 0; j < otherHeaders.length; j++) {
               if (Array.isArray(secondQuery[i][otherHeaders[j]])) {
@@ -206,14 +214,12 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
           }
 
           message += '</tr>';
+
+          message += '</tbody></table>';
         }
-
-
-        message += '</tbody></table>';
-        //console.log(count);
-        if (count == 0) {
+        if (canCallback) {
           callback(message);
-          count++;
+          canCallback = false;
         }
       });
     });
