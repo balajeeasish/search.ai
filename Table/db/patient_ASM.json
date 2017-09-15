@@ -1,34 +1,42 @@
 [
   {
     "id": "ABC1",
-    "ASM": 10
+    "ASM": 10,
+    "Eye Color": "black"
   },
   {
     "id": "ABC2",
-    "ASM": 15
+    "ASM": 15,
+    "Eye Color": "brown"
   },
   {
     "id": "ABC3",
-    "ASM": 20
+    "ASM": 20,
+    "Eye Color": "blue"
   },
   {
     "id": "ABE1",
-    "ASM": 12
+    "ASM": 12,
+    "Eye Color": "brown"
   },
   {
     "id": "ABE2",
-    "ASM": 30
+    "ASM": 30,
+    "Eye Color": "black"
   },
   {
     "id": "ABF1",
-    "ASM": 5
+    "ASM": 5,
+    "Eye Color": "gray"
   },
   {
     "id": "ABF2",
-    "ASM": 18
+    "ASM": 18,
+    "Eye Color": "brown"
   },
   {
     "id": "ABF3",
-    "ASM": 20
+    "ASM": 20,
+    "Eye Color": "green"
   }
 ]
