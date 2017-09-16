@@ -153,11 +153,15 @@ function formatResponse(result, mainHeaders, otherHeaders, callback) {
         var firstQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: data }).value;
         if (otherHeaders.length > 0) {
           var secondQuery = jsonQuery('[*' + createFinalQuery(result) + ']', { data: content }).value;
-          //only if the secondQuery  has defined values, send callback message
-          if (typeof secondQuery[0][insertSpaces(otherHeaders[0])] == 'undefined') {
+          //only if the secondQuery has defined values, send callback message
+          if (typeof secondQuery[0] == 'undefined') {
             canCallback = false;
           } else {
-            canCallback = true;
+            if (typeof secondQuery[0][insertSpaces(otherHeaders[0])] == 'undefined') {
+              canCallback = false;
+            } else {
+              canCallback = true;
+            }
           }
         }
         //print patient information in clusters with line breaks in the results
